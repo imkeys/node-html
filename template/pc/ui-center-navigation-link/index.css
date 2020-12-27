@@ -1,0 +1,12 @@
+#ui-$param.model._id {
+  background-color: $param.model.backgroundColor;
+  $if(param.model.backgroundImage)
+    background-image: url($param.model.backgroundImage)
+  $end
+  padding: $param.model.padding;
+}
+#ui-$param.model._id $param._empty .center-0 a {
+  border-radius: $param.model.radius;
+}
+
+#ui-$param.model._id $param._empty .center-0 a:hover{background-color: $param._defaultColor;color:#fff;transition:none;}

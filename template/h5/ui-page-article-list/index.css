@@ -1,0 +1,16 @@
+#foot_page span {
+  text-align: center;
+  display: block;
+  color: #999;
+  margin: 0 3%;
+  height: 0.7rem;
+  background: #fff;
+  font-size: 0.24rem;
+  line-height: 0.7rem;
+  border-radius: 0.06rem;
+}
+
+.article-filter-wrap-mobile .filter-list .wrap .filter-item .item-url.active {
+  background: $param._defaultColor;
+  color: #fff;
+}

@@ -1,0 +1,11 @@
+<div class="ui-center-navigation-link" id="ui-$param.model._id">
+	<div class="ui-control-layout center-0">
+		<ul>
+			$foreach(item in param.model.data)
+			<li>
+				<a href="$item.url" $if(item.mode == 10) target="_blank" $end>$item.title</a>
+			</li>
+			$end
+		</ul>
+	</div>
+</div>

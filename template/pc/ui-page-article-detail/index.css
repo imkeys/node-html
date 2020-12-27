@@ -1,0 +1,9 @@
+#ui-menuer h2 {
+ 	background-color: $param._defaultColor;
+}
+#ui-menuer .item.active span {
+	background: $param._defaultColor;
+}
+#ui-menuer .foot dd {
+	color: $param._defaultColor;
+}

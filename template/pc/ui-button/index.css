@@ -1,0 +1,83 @@
+.is-old#ui-$param.model._id {
+	background-color: $param.model.oColor;
+}
+
+.is-old#ui-$param.model._id $param._empty .ui-control-layout {
+	text-align: $param.model.position
+}
+
+.is-old#ui-$param.model._id $param._empty .center-0 a {
+  	width: ${param.model.width}px;
+	height: ${param.model.height}px;
+	line-height: ${param.model.height}px;
+	color: $param.model.font.color;
+}
+
+.is-old#ui-$param.model._id $param._empty .center-1 a {
+  	width: ${param.model.width}px;
+	height: ${param.model.height}px;
+	line-height: ${param.model.height}px;
+	border-radius: ${param.model.radius}px;
+	color: $param.model.buttonFontColor;
+	border-color: $param.bgd.backgroundColor
+}
+
+.is-old#ui-$param.model._id $param._empty .center-2 a {
+  	width: ${param.model.width}px;
+	height: ${param.model.height}px;
+	line-height: ${param.model.height}px;
+	border-radius: ${param.model.radius}px;
+	color: $param.model.font.color;
+	background-color: $param.model.bgd.backgroundColor;
+	$if(param.model.bgd.backgroundImage)
+    	background-image: url($param.model.bgd.backgroundImage);
+    	background-size: cover;
+    	background-position: center center;
+    	background-repeat: no-repeat;  
+  	$end
+}
+
+#ui-$param.model._id $param._empty .ui-control-ver a {
+  	width: ${param.model.width}px;
+	height: ${param.model.height}px;
+	line-height: ${param.model.height}px;
+	border-radius: ${param.model.radius}px;
+	color: $param.model.font.color;
+	padding: 0;
+	$if(param.model.bgd.backgroundImage)
+      background-image: url($param.model.bgd.backgroundImage);
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;  
+    $end
+	background-color: $param.model.bgd.backgroundColor;
+	$if(param.model.border.w)
+		border: ${param.model.border.w}px solid $param.model.border.color;
+	$end
+	font-family: $param.model.font.fontFamily;
+    font-size: ${param.model.font.fontSize}px;
+	$if(param.model.font.isBold)
+    	font-weight: bold;
+	$end
+	$if(param.model.font.isItalics)
+    	font-style: italic;
+	$end
+	$if(param.model.font.isUnderline)
+    	text-decoration: underline;
+	$end
+    text-align: $param.model.font.textAlign;
+	box-shadow: ${param.model.shadow.x}px ${param.model.shadow.y}px ${param.model.shadow.vague}px $param.model.shadow.color;
+}
+
+#ui-$param.model._id $param._empty .ui-control-ver a:hover {
+	background-color: $param.model.selectBgd.backgroundColor;
+	color: $param.model.font.selectColor;
+}
+
+.ui-sub $param._empty #ui-$param.model._id,
+.ui-control-layout $param._empty #ui-$param.model._id {
+  position: absolute;
+  left: ${param.model.x}px;
+  top: ${param.model.y}px;
+  z-index: ${param.model.z};
+}

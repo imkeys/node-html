@@ -1,0 +1,47 @@
+<div class="ui-image-text" id="ui-$param.model._id" data-approach='$param.model.approach.jsonText'>
+  <div class="ui-control-layout center-$param.model.format" data-x="$param.model.x" data-y="$param.model.y"
+    data-z="$param.model.z" data-w="$param.model.width" data-h="$param.model.height">
+    $if(param.model.format == 0)
+    <div class="img">
+      <a href="$param.model.picLink.url" target="_blank">
+        <img src="$param.model.pic" title="$param.model.caption" alt="$param.model.caption" />
+      </a>
+    </div>
+    <div class="exp">
+      <h3>$param.model.caption</h3>
+      <p>$param.model.content</p>
+      $if(param.model.picLink.url!= null && param.model.picLink.url != '')
+      <a href="$param.model.picLink.url" target="_blank">了解详情</a>
+      $end
+    </div>
+    $end
+
+    $if(param.model.format == 1)
+    <div class="img">
+      <a href="$param.model.picLink.url" target="_blank">
+        <img src="$param.model.pic" title="$param.model.caption" alt="$param.model.caption" />
+      </a>
+    </div>
+    <div class="exp">
+      <h3>$param.model.caption</h3>
+      <p>$param.model.content</p>
+    </div>
+    $end
+    $if(param.model.format == 2)
+    <div class="img">
+      <a href="$param.model.picLink.url" target="_blank">
+        <img src="$param.model.pic" title="$param.model.caption" alt="$param.model.caption" />
+      </a>
+    </div>
+    <div class="exp">
+      <h3>$param.model.caption</h3>
+      <p>$param.model.content</p>
+      $if(param.model.picLink.url=='')
+      $else
+      <a href="$param.model.picLink.url" target="_blank">了解详情</a>
+      $end
+    </div>
+    $end
+
+  </div>
+</div>

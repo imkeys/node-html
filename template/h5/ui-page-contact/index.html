@@ -1,0 +1,32 @@
+<div class="ui-page-contact">
+  <div class="center-0">
+    <div class="content contactpage">
+      <div class="conlist">
+        <div class="item tel">
+          <s class="ico"></s>
+          <span style="line-height: .4rem;">联系电话</span>
+          <span style="line-height: .3rem;">
+            $if(param.model.person != null)
+            <span class="name" style="float:left;">$param.model.person：</span>
+            $end
+            <a style="color:#f95927;font-weight:bold;" href="tel:$param.model.contact">$param.model.contact</a>
+          </span>
+          $foreach(item in param.model.et)
+          <span style="line-height: .3rem;">
+            <span class="name" style="float:left;">$item.caption：</span>
+            <a class="tel" href="tel:$item.v" style="color:#f95927;font-weight:bold;">$item.v</a>
+          </span>
+          $end
+        </div>
+        <div class="item address">
+          <s class="ico"></s>
+          <span>联系地址</span>
+          <strong>$param.model.address</strong>
+        </div>
+      </div>
+      <div class="maparea" id="ui-map"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="//api.map.baidu.com/api?ak=X7hHPQRGgG7EcPIU2odpGa0PwP8GWCYs&v=2.0"></script>

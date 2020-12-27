@@ -1,0 +1,30 @@
+<div class="ui-group-map-ly">
+	<div class="ui-control-layout">
+		<div class="ly" id="my-ly-form">
+			<h1>$param.text</h1>
+			<div class="node">
+				<label>姓名：</label>
+				<input type="text" name="nickname" />
+			</div>
+			<div class="node">
+				<label>手机号码：</label>
+				<input type="text" name="phone" />
+			</div>
+			<div class="node node-1">
+				<textarea name="content"></textarea>
+			</div>
+			<div class="submit">
+				<button type="button" class="send" name="submit">提交</button>
+				<button type="button">重置</button>
+			</div>
+		</div>
+		<div class="map">
+			<div class="map-evl" id="map-evl-$param.id"></div>
+			<div class="map-evl-destion">
+				<div class="cn">$param.companyName</div>
+				<div class="tell">$param.tell</div>
+				<div class="address">$param.address</div>
+			</div>
+		</div>
+	</div>
+</div>

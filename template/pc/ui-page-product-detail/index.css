@@ -1,0 +1,21 @@
+#ui-menuer h2 {
+ 	background-color: $param._defaultColor;
+}
+#ui-menuer .item.active span {
+	background: $param._defaultColor;
+}
+#ui-menuer .foot dd {
+	color: $param._defaultColor;
+}
+
+.ui-product-detail .center-0 .tel{
+	$if(param._defaultColor!=null)
+		background:$param._defaultColor;
+	$end
+	margin-top:30px;
+}
+
+.ui-product-detail .center-0 .ui-article .top-title h3 {
+	border-top:5px solid $param._defaultColor;
+	color:$param._defaultColor;
+}

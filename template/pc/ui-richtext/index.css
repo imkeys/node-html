@@ -1,0 +1,34 @@
+#ui-$param.model._id $param._empty .inn {
+	min-height:30px;
+	$if(param.model.backgroundColor)
+		background-color: $param.model.backgroundColor;
+	$end
+	$if(param.model.isFullScreen)
+		padding: 0px;
+	$else
+		padding: 5px;
+	$end
+}
+
+.ui-control-layout $param._empty #ui-$param.model._id,
+.ui-sub $param._empty #ui-$param.model._id {
+	position: absolute;
+	left: ${param.model.x}px;
+	top: ${param.model.y}px;
+	z-index: ${param.model.z};
+}
+
+.ui-control-layout #ui-$param.model._id .ui-control-layout,
+.ui-sub #ui-$param.model._id .ui-control-layout {
+	width: ${param.model.width}px;
+}
+
+.ui-control-layout .ui-richtext .rich p,
+.ui-sub .ui-richtext .rich p {
+	margin: 0;
+}
+
+.ui-control-layout .ui-richtext .rich a,
+.ui-sub .ui-richtext .rich a {
+	color: #496ee8;
+}

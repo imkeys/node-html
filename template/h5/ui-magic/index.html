@@ -1,0 +1,20 @@
+<nav class="ui-magic $if(param.model.isOver)is-over$end" id="ui-$param.model._id">
+	<div class="ui-control-layout center-$param.model.format">
+		<div class="main">
+			<ul class="list">
+				$foreach(item in param.model.data)
+				<li class="item ui-column-$param.model.columnFormat">
+					<a href="$item.url" class="cell">
+						<div class="img">
+							<figure>
+								<img src="$item.pic" alt="$item.title" />
+							</figure>
+						</div>
+						<h3 class="tit">$item.title</h3>
+					</a>
+				</li>
+				$end
+			</ul>
+		</div>
+	</div>
+</nav>

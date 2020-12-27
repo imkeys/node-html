@@ -1,0 +1,76 @@
+<div class="ui-product-scroll-pack" id="ui-$param.model._id">
+  <div class="ui-control-layout center-$param.model.format">
+    <div class="main">
+      <div class="prev">
+        <b class="k$param.model.icoFormat"></b>
+      </div>
+      <div class="next">
+        <b class="k$param.model.icoFormat"></b>
+      </div>
+      <div class="scroll">
+        $if(param.model.format == 0)
+          <ul class="list">
+            $foreach(item in param.model.data)
+            <li class="item column-$param.model.columnFormat">
+              <div class="cell">
+                <div class="mack">
+                  <div class="img ui-scale-$param.model.scale">
+                    <a href="$item.link" target="_blank" title="$item.title">
+                      <img src="$item.pic" alt="$item.title" />
+                    </a>
+                  </div>
+                  $if(item.qrCode)
+                  <div class="rcode">
+                    <a href="$item.link" target="_blank" title="$item.title">
+                      <img src="$item.qrCode" />
+                      <span>扫码预定</span>
+                    </a>
+                  </div>
+                  $end
+                </div>
+                <div class="exp">
+                  <h3>
+                    <a href="$item.link" target="_blank" title="$item.title">$item.title</a>
+                  </h3>
+                </div>
+              </div>
+            </li>
+            $end
+          </ul>
+        $end
+        
+        $if(param.model.format == 1)
+        <ul class="list">
+          $foreach(item in param.model.data)
+          <li class="item column-$param.model.columnFormat">
+            <div class="cell">
+              <div class="mack">
+                <div class="img ui-scale-$param.model.scale">
+                  <a href="$item.link" target="_blank" title="$item.title">
+                    <img src="$item.pic" alt="$item.title" />
+                  </a>
+                </div>
+                $if(item.qrCode)
+                <div class="rcode">
+                  <a href="$item.link" target="_blank" title="$item.title">
+                    <img src="$item.qrCode" />
+                    <span>扫码预定</span>
+                  </a>
+                </div>
+                $end
+              </div>
+              <div class="exp">
+                <h3>
+                  <a href="$item.link" target="_blank" title="$item.title">$item.title</a>
+                </h3>
+                <a href="$item.link" target="_blank" title="$item.title" class="buy">$param.model.buttonText</a>
+              </div>
+            </div>
+          </li>
+          $end
+        </ul>
+        $end
+      </div>
+    </div>
+  </div>
+</div>

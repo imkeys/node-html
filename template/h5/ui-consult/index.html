@@ -1,0 +1,12 @@
+<div class="ui-consult" id="ui-$param.model._id">
+  <div class="ui-control-layout center-$param.model.format">
+    <h3>$param.model.h1</h3>
+    <h4>$param.model.h2</h4>
+    <div class="button">
+      $foreach(item in param.model.buttons)
+      <a href="$item.href.url"
+        style="background-color:$item.backgroundColor;color:$item.color;border-color:$item.backgroundColor;">$item.text</a>
+      $end
+    </div>
+  </div>
+</div>

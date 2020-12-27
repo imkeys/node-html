@@ -1,0 +1,203 @@
+$if(param.backgroundColor != '')
+  body {
+    $if(param.backgroundColor)
+    	background-color: $param.backgroundColor;
+    $end
+  }
+$end
+
+$if(param.defaultColor!='')
+  a:hover,
+  a:active {
+    color: $param.defaultColor;
+  }
+$else if(param.defaultColor== '' || param.defaultColor == '#FFFFFF')
+  a:hover,
+  a:active {
+    color: #0484cb;
+  }
+$end
+
+.ui-control-layout {
+	width: $param.width;
+}
+
+#ui-header {
+	$if(param.header.backgroundColor)
+		background-color: $param.header.backgroundColor;
+  	$end
+  
+	$if(param.header.backgroundImage)
+      background-image: url($param.header.backgroundImage);
+      background-position-x: center;
+      background-position-y: top;
+      background-repeat: no-repeat;
+	$end
+}
+
+#ui-header .tel {
+  color: $param.defaultColor;
+}
+
+#ui-header .nav {
+  background: $param.header.navigationBackgroundColor
+}
+
+#ui-header .nav .link {
+  color: $param.header.navigationFontColor;
+}
+
+#ui-header .nav .list2 {
+	background: $param.header.navigationHoverBorderColor;
+}
+
+#ui-header .nav .link i {
+  border-top-color: $param.header.navigationHoverFontColor;
+}
+
+#ui-header .nav .item.hover .link {
+  background: $param.header.navigationHoverBackgroundColor;
+  color: $param.header.navigationHoverFontColor;
+}
+
+#ui-header .nav .link:hover {
+  background: $param.header.navigationHoverBackgroundColor;
+  color: $param.header.navigationHoverFontColor;
+}
+
+#ui-footer {
+	$if(param.footer.backgroundColor)
+		background-color: $param.footer.backgroundColor;
+	$else
+		background-color: $param.defaultColor;
+  	$end
+  
+  	$if(param.footer.fontColor)
+		color: $param.footer.fontColor;
+	$else
+		color: #ffffff;
+  	$end
+  
+	$if(param.footer.backgroundImage)
+      background-image: url($param.footer.backgroundImage);
+      background-position-x: center;
+      background-position-y: top;
+      background-repeat: no-repeat;
+	$end
+}
+
+#ui-footer .center-2 .part {
+  color: $param.footer.fontColor;
+}
+
+#ui-footer .center-2 .part a {
+  color: $param.footer.fontColor;
+}
+
+#ui-footer .center-2 .copyright p {
+  color: $param.footer.fontColor;
+}
+
+#ui-footer .center-2 .copyright a {
+  color: $param.footer.fontColor;}
+
+#ui-footer .center-2 .x-input-min,
+.ui-footer .center-2 .x-input-max {
+  color: $param.footer.fontColor;
+}
+
+#ui-footer input::-webkit-input-placeholder,
+#ui-footer textarea::-webkit-input-placeholder {
+  color: $param.footer.fontColor;
+}
+
+#ui-footer input:-moz-placeholder,
+#ui-footer textarea:-moz-placeholder {
+  color: $param.footer.fontColor;
+}
+
+#ui-footer input::-moz-placeholder,
+#ui-footer textarea::-moz-placeholder {
+  color: $param.footer.fontColor;
+}
+
+#ui-footer input:-ms-input-placeholder,
+#ui-footer textarea:-ms-input-placeholder {
+  color: $param.footer.fontColor;
+}
+
+.ui-top-fix {
+  height: ${param.header.height}px;
+}
+
+#ui-top {
+  $if(param.header.backgroundColor)
+    background-color: $param.header.backgroundColor;
+  $end
+
+  $if(param.header.backgroundImage)
+    background-image: url($param.header.backgroundImage);
+    background-position-x: center;
+    background-position-y: top;
+    background-repeat: no-repeat;  		
+  $end
+}
+
+#ui-bottom {
+	$if(param.footer.bgd.isImage)
+  		background: url($param.footer.bgd.backgroundImage) center top repeat-x;
+  	$else
+  		background-color: $param.footer.bgd.backgroundColor;
+  	$end
+}
+
+#ui-bottom a {
+  $if(param.footer.font.color)
+  	color: $param.footer.font.color;
+  $else
+  	color: #F1F1F1;
+  $end
+}
+
+#ui-bottom .box {
+  position: relative;
+  height: ${param.footer.height}px;
+}
+
+.ui-copyright {
+	background: $param.footer.copyrightBgColor;
+}
+
+.ui-copyright.is-True {
+	display: none;
+}
+
+.ui-copyright .inc {
+  	height: ${param.footer.copyrightHeight}px;
+  	line-height: ${param.footer.copyrightHeight}px;
+	font-family: $param.footer.font.fontFamily;
+    font-size: ${param.footer.font.fontSize}px;
+  	text-align: $param.footer.font.textAlign;
+  	$if(param.footer.font.isBold)
+    	font-weight: bold;
+  	$end
+  	$if(param.footer.font.isItalics)
+    	font-style: italic;
+  	$end
+  	$if(param.footer.font.isUnderline)
+    	text-decoration: underline;
+  	$end
+  	$if(param.footer.font.color)
+  		color: $param.footer.font.color;
+  	$else
+    	color: #F1F1F1;
+  	$end
+}
+
+.ui-copyright .inc a:hover {
+  	$if(param.footer.font.selectColor)
+		color: $param.footer.font.selectColor !important;
+  	$else
+  		color: #999999 !important;
+  	$end
+}

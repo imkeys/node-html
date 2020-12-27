@@ -1,0 +1,246 @@
+<div class="ui-wrapper" id="ui-wrapper">
+  <div class="ui-control-layout ui-control-layout-$param.model.flex">
+    <div class="ui-path" id="ui-path">
+      <h2>在线留言</h2>
+      <dl class="path">
+        <dt>您的位置：</dt>
+        $foreach(p in param.model._navigation)
+          <dd><a href="$p.link">$p.title</a></dd>
+        $end
+        <dd><span>在线留言</span></dd>
+      </dl>
+    </div>
+    $if(param.model._category != null)
+    <div class="ui-menuer-v2" id="ui-menuer">
+      <h2>栏目分类</h2>
+      <ul class="list">
+        $if(param.model._category != null)
+          $foreach(item in param.model._category)
+            $if(item.isCurrent)
+              <li class="item active">
+                <span class="link">$item.title</span>
+                <div class="drop">
+                  <div class="trigger">
+                    <i></i>
+                  </div>
+                  <dl class="list2">
+                    $foreach(item2 in item.child)
+                    <dd class="item2">
+                      <a href="$item2.link" class="link2" title="$item2.title">$item2.title</a>
+                    </dd>
+                    $end
+                  </dl>
+                </div>
+              </li>
+            $else
+              <li class="item">
+                <a href="$item.link" class="link" title="$item.title">$item.title</a>
+                <div class="drop">
+                  <div class="trigger">
+                    <i></i>
+                  </div>
+                  <dl class="list2">
+                    $foreach(item2 in item.child)
+                    <dd class="item2">
+                      <a href="$item2.link" class="link2" title="$item2.title">$item2.title</a>
+                    </dd>
+                    $end
+                  </dl>
+                </div>
+              </li>
+            $end
+          $end
+        $else
+          <li class="item active">
+            <span>$param.model._curGroupTitle</span>
+          </li>
+        $end
+      </ul>
+      <dl class="foot">
+        <dt>服务热线</dt>
+        <dd>$param._contactPhone</dd>
+      </dl>
+    </div>
+    $end
+    <div class="ui-container">
+      <div class="ui-content">
+        <div class="ui-page-ly" id="ui-$param.model._id">
+          <div class="center-$param.model.format">
+            <div class="head">
+              <h2>欢迎与我们联系</h2>
+              <p>您可以在线提交您的问题与需求，我们会尽快联系您或直接在线回复</p>
+              <p>如果急需回复，请致电 <b>$param._contactPhone</b></p>
+            </div>
+            <form action="/home/from-submit" data-formid="$param.model.formId" class="center-$param.model.format" id="ui-form-$param.model._id">
+              $if(param.model._formId == 6000)
+              <div class="default">
+                <div class="list">
+                  <div class="group clearfix">
+                    <div class="rows required">
+                      <div class="txt">
+                        <input type="text" name="60000" value="姓名" label="姓名" placeholder="姓名" maxlength="16" data-required="required" error="请输入姓名"  />
+                      </div>
+                    </div>
+                    <div class="rows required">
+                      <div class="txt">
+                        <input type="text" name="60001" value="电话" label="电话" placeholder="电话" maxlength="11" data-required="phone" error="请输入电话"  />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rows2">
+                        <div class="text">
+                        <textarea name="60002" placeholder="请输入内容" label="内容" maxlength="200">请输入内容</textarea>
+                    </div>
+                  </div>
+                  <div class="rows3">
+                    <div class="submit">
+                      <input type="submit" name="submit" value="提交信息" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              $else
+              <div class="main">
+                <div class="list">
+                  $foreach(item in param.model.fields)
+                  <div class="rows">
+                    <div class="label">
+                      <label for="$item.isNull">$item.label</label>
+                      $if(item.isNull)
+                      $else
+                      <i>*</i>
+                      $end
+                    </div>
+                    <div class="control">
+                      $if(item.format == 0)
+                      <div class="text">
+                        $if(item.isNull)
+                        <input type="text" value="$item.data" name="$item.id" label="$item.label" placeholder="$item.placeholder" maxlength="$item.maxSize" />
+                        $else
+                        <input type="text" value="$item.data" name="$item.id" label="$item.label" placeholder="$item.placeholder" maxlength="$item.maxSize" data-required="required" />
+                        $end
+                      </div>
+                      $end
+
+                      $if(item.format == 1)
+                      <div class="textarea">
+                        $if(item.isNull)
+                        <textarea type="text" value="$item.data" name="$item.id" label="$item.label" placeholder="$item.placeholder" maxlength="$item.maxSize"></textarea>
+                        $else
+                        <textarea type="text" value="$item.data" name="$item.id" label="$item.label" placeholder="$item.placeholder" maxlength="$item.maxSize" data-required="required"></textarea>
+                        $end
+                      </div>
+                      $end
+
+                      $if(item.format == 2)
+                      <div class="text">
+                        $if(item.isNull)
+                        <input type="phone" value="$item.data" name="$item.id" label="$item.label" placeholder="$item.placeholder" maxlength="11" />
+                        $else
+                        <input type="phone" value="$item.data" name="$item.id" label="$item.label" placeholder="$item.placeholder" maxlength="11" data-required="phone" />
+                        $end
+                      </div>
+                      $end
+
+                      $if(item.format == 3)
+                      <div class="select">
+                        $if(item.isNull)
+                        <select name="$item.id">
+                          $foreach(item2 in item.data)
+                          <option value="$item2" key="$index2">$item2</option>
+                          $end
+                        </select>
+                        $else
+                        <select name="$item.id" label="$item.label" data-required="required">
+                          $foreach(item2 in item.data)
+                          <option value="$item2" key="$index2">$item2</option>
+                          $end
+                        </select>
+                        $end
+                      </div>
+                      $end
+
+                      $if(item.format == 5)
+                      <div class="text">
+                        $if(item.isNull)
+                        <input type="text" value="$item.data" name="$item.id" label="$item.label" placeholder="$item.placeholder" maxlength="16" $if(item.isNb) readonly $end />
+                        $else
+                        <input type="text" value="$item.data" name="$item.id" label="$item.label" placeholder="$item.placeholder" maxlength="16" data-required="number" $if(item.isNb) readonly $end />
+                        $end
+                      </div>
+                      $end
+
+                      $if(item.format == 6)
+                      <div class="radio">
+                        $if(item.isNull)
+                          $foreach(item2 in item.data)
+                          <label class="item">
+                            <input type="radio" name="$item.id" value="$item2.id" label="$item.label" placeholder="$item.placeholder" />
+                            <span>$item2.text</span>
+                          </label>
+                          $end
+                        $else
+                          $foreach(item2 in item.data)
+                          <label class="item">
+                            <input type="radio" name="$item.id" value="$item2.id" label="$item.label" data-required="required" placeholder="$item.placeholder"  />
+                            <span>$item2.text</span>
+                          </label>
+                          $end
+                        $end
+                      </div>
+                      $end
+
+                      $if(item.format == 7)
+                      <div class="checkbox">
+                        $if(item.isNull)
+                          $foreach(item2 in item.data)
+                          <label class="item">
+                            <input type="checkbox" name="$item.id" value="$item2.id" label="$item.label" placeholder="$item.placeholder" />
+                            <span>$item2.text</span>
+                          </label>
+                          $end
+                        $else
+                          $foreach(item2 in item.data)
+                          <label class="item">
+                            <input type="checkbox" name="$item.id" value="$item2.id" label="$item.label" data-required="required" placeholder="$item.placeholder"  />
+                            <span>$item2.text</span>
+                          </label>
+                          $end
+                        $end
+                      </div>
+                      $end
+
+                      $if(item.format == 9)
+                      <div class="huxing" id="hx-$param.model._id">
+                        <div class="txt">
+                          <dl>
+                          	<dd>$item.placeholder</dd>
+                          </dl>
+                          $if(item.isNull)
+                          <input type="hidden" value="$item.data" name="$item.id" label="$item.label" placeholder="$item.placeholder" maxlength="$item.maxSize" readonly />
+                          $else
+                          <input type="hidden" value="$item.data" name="$item.id" label="$item.label" placeholder="$item.placeholder" maxlength="$item.maxSize" readonly data-required="huxing" />
+                          $end
+                          <div class="f"></div>
+                        </div>
+                      </div>
+                      $end
+
+                    </div>
+                  </div>
+                  $end
+                </div>
+                <div class="foot">
+                  <div class="submit">
+                    <input type="submit" name="submit" value="提交信息" />
+                  </div>
+                </div>
+              </div>
+              $end
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

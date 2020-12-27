@@ -1,0 +1,16 @@
+<div class="ui-title" id="ui-$param.model._id">
+          <div class="ui-control-layout center-$param.model.format">
+$if(param.model.format == 0)
+<a href="$param.model.href.url">
+              <div class="title">$param.model.text</div>
+            </a>
+$elseif(param.model.format == 1)
+<div class="title">
+                <h3 class="tit"><i></i>$param.model.text</h3>
+                <a class="more" href="$param.model.href.url">更多</a>
+              </div>
+$else
+ <a class="more" href="$param.model.href.url">$param.model.text</a>
+$end
+          </div>
+        </div>

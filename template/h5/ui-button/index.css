@@ -1,0 +1,90 @@
+#ui-$param.model._id $param._empty .main {
+	text-align: $param.model.position;
+	background-color:$param.model.backgroundColor;
+}
+
+#ui-$param.model._id $param._empty .center-0 .button {
+	width: ${param.model.width}rem; 
+	height: ${param.model.height}rem;
+    border-radius: ${param.model.radius}rem;
+	$if(param.model.backgroundImage)
+		background-image: url($param.model.backgroundImage);
+	$end
+	background-color: $param.model.buttonBackgroundColor;
+}
+
+#ui-$param.model._id $param._empty .center-0 span {
+	line-height: ${param.model.height}rem;
+	font-size: ${param.model.fontSize}rem;
+	color: $param.model.buttonFontColor;
+	$if(param.mode.isBold)	
+		font-weight:bold;
+	$else
+		font-weight:normal;
+	$end;
+}
+
+#ui-$param.model._id $param._empty .center-1 .button {
+  	width: ${param.model.width}rem;
+	height: ${param.model.height}rem;
+	border-radius: ${param.model.radius}rem;
+	background: #fff;
+	border: 1px solid $param.model.buttonBackgroundColor;
+}
+
+#ui-$param.model._id $param._empty .center-1 span {
+	line-height: ${param.model.height}rem;
+	font-size: ${param.model.fontSize}rem;
+	color: $param.model.buttonFontColor;
+	$if(param.mode.isBold)	
+		font-weight:bold;
+	$else
+		font-weight:normal;
+	$end;
+}
+
+#ui-$param.model._id $param._empty .center-2 a {
+  	width: ${param.model.width}rem;
+	height: ${param.model.height}rem;
+	border-radius: ${param.model.radius}rem;
+	color: $param.model.textColor;
+	background-color: $param.model.buttonBackgroundColor;
+	$if(param.model.backgroundImage)
+		background-image: url($param.model.backgroundImage);
+	$end
+}
+
+.ui-container $param._empty #ui-$param.model._id {
+	position: absolute;
+	left: ${param.model.x}px;
+    top: ${param.model.y}px;
+    z-index: ${param.model.z};
+}
+
+.ui-container $param._empty #ui-$param.model._id $param._empty .center-0 .button {
+	width: ${param.model.width}px; 
+	height: ${param.model.height}px;
+  border-radius: ${param.model.radius}px;
+}
+
+.ui-container $param._empty #ui-$param.model._id $param._empty .center-0 span {
+	line-height: ${param.model.height}px;
+	font-size: ${param.model.fontSize}px;
+}
+
+.ui-container $param._empty #ui-$param.model._id $param._empty .center-1 .button {
+  	width: ${param.model.width}px;
+	height: ${param.model.height}px;
+	border-radius: ${param.model.radius}px;
+}
+
+.ui-container $param._empty #ui-$param.model._id $param._empty .center-1 span {
+	line-height: ${param.model.height}px;
+	font-size: ${param.model.fontSize}px;
+}
+
+.ui-container $param._empty #ui-$param.model._id $param._empty .center-2 a {
+  	width: ${param.model.width}px;
+	height: ${param.model.height}px;
+	border-radius: ${param.model.radius}px;
+}

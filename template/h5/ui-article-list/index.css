@@ -1,0 +1,15 @@
+#ui-$param.model._id $param._empty .swiper-container .swiper-pagination-bullet-active {
+  background-color: $param._defaultColor;
+}
+
+$if(param.model.backgroundColor != '')
+  #ui-$param.model._id {
+    background-color: $param.model.backgroundColor;
+  }    
+$end
+
+$if(param.model.color != '')
+  #ui-$param.model._id $param._empty h3 {
+    color: $param.model.color !important;
+  }
+$end

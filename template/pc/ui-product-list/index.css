@@ -1,0 +1,148 @@
+#ui-$param.model._id {
+  background-color: $param.model.backgroundColor;
+  $if(param.model.backgroundImage)
+  	background-image: url($param.model.backgroundImage);
+  	background-size: cover;
+  	background-position: center center;
+  	background-repeat: no-repeat;  
+  $end
+}
+
+#ui-$param.model._id $param._empty .center-4 .main {
+	visibility: hidden;
+}
+
+#ui-$param.model._id $param._empty .center-0 .img,
+#ui-$param.model._id $param._empty .center-3 .cell-img,
+#ui-$param.model._id $param._empty .center-4 .cell-img {
+	border-radius: ${param.model.radius}px;
+}
+
+#ui-$param.model._id $param._empty .center-0 .cell .exp,
+#ui-$param.model._id $param._empty .center-3 .cell .cell-exp,
+#ui-$param.model._id $param._empty .center-4 .cell .cell-exp {
+	$if(param.model.textBd.def == "")
+		box-shadow: none;
+	$else
+		box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+	$end
+	background-color: $param.model.textBd.def;
+}
+
+#ui-$param.model._id $param._empty .center-0 .cell h3,
+#ui-$param.model._id $param._empty .center-3 .cell h3,
+#ui-$param.model._id $param._empty .center-4 .cell .cell-exp,
+#ui-$param.model._id $param._empty .center-4 .cell .cell-title,
+#ui-$param.model._id $param._empty .center-9 .cell .cell-title {
+	$if(param.model.isNt)
+		display: none;
+	$end
+	font-family: $param.model.tFont.fontFamily;
+	font-size: ${param.model.tFont.fontSize}px;
+	text-align: $param.model.tFont.textAlign;
+}
+
+#ui-$param.model._id $param._empty .center-0 .cell h3 a,
+#ui-$param.model._id $param._empty .center-3 .cell h3 a,
+#ui-$param.model._id $param._empty .center-4 .cell h3 a,
+#ui-$param.model._id $param._empty .center-9 .cell .cell-title a {
+	color: $param.model.tFont.color;
+}
+
+#ui-$param.model._id $param._empty .center-0 .cell:hover .exp,
+#ui-$param.model._id $param._empty .center-3 .cell:hover .cell-exp,
+#ui-$param.model._id $param._empty .center-4 .cell:hover .cell-exp {
+	background-color: $param.model.textBd.hov;
+}
+
+#ui-$param.model._id $param._empty .center-0 .cell:hover h3 a,
+#ui-$param.model._id $param._empty .center-3 .cell:hover h3 a,
+#ui-$param.model._id $param._empty .center-4 .cell:hover h3 a,
+#ui-$param.model._id $param._empty .center-9 .cell .cell-title a:hover {
+	color: $param.model.tFont.selectColor;
+}
+
+#ui-$param.model._id $param._empty .center-9 .main {
+	border-radius: ${param.model.radius}px;
+}
+
+#ui-$param.model._id $param._empty .center-9 .dots {
+	$if(param.model.isNt)
+		bottom: 10px;
+	$else
+		bottom: 50px;
+	$end
+}
+
+#ui-$param.model._id $param._empty .center-1 .cell {
+	border-radius: ${param.model.radius}px;
+}
+
+#ui-$param.model._id $param._empty .center-1 .img {
+	border-radius: ${param.model.radius}px;
+}
+
+#ui-$param.model._id $param._empty .center-1 .item:hover .exp h3 a {
+  color: $param._defaultColor;
+}
+
+#ui-$param.model._id $param._empty .center-5 .cell-img div {
+  border-radius: ${param.model.radius}px;
+}
+
+#ui-$param.model._id $param._empty .center-6 .cell {
+	border-radius: ${param.model.radius}px;
+	overflow: hidden;
+}
+
+#ui-$param.model._id $param._empty .center-8 .img {
+	border-radius: ${param.model.radius}px;
+	overflow: hidden;
+}
+
+#ui-$param.model._id $param._empty .center-8 .exp span {
+  background: $param._defaultColor;
+}
+
+.ui-control-layout $param._empty #ui-$param.model._id,
+.ui-sub $param._empty #ui-$param.model._id {
+  position: absolute;
+  left: ${param.model.x}px;
+  top: ${param.model.y}px;
+  z-index: ${param.model.z};
+}
+
+.ui-control-layout $param._empty #ui-$param.model._id .ui-control-layout,
+.ui-sub $param._empty #ui-$param.model._id .ui-control-layout {
+  width: ${param.model.width}px;
+  height: ${param.model.height}px;
+  box-sizing: border-box;
+}
+
+$if(param.model.format == 10)
+#ui-$param.model._id $param._empty .center-10 .cell-exp {
+	$if(param.model.textBd.def == "")
+		box-shadow: none;
+	$else
+		box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+	$end
+	background-color: $param.model.textBd.def;
+}
+#ui-$param.model._id $param._empty .center-10 .cell-title {
+	$if(param.model.isNt)
+		display: none;
+	$end
+	font-family: $param.model.tFont.fontFamily;
+	font-size: ${param.model.tFont.fontSize}px;
+	text-align: $param.model.tFont.textAlign;
+}
+#ui-$param.model._id $param._empty .center-10 .cell-title a {
+	color: $param.model.tFont.color;
+}
+#ui-$param.model._id $param._empty .center-10 .cell:hover .cell-exp {
+	background-color: $param.model.textBd.hov;
+}
+#ui-$param.model._id $param._empty .center-10 .cell:hover .cell-title a {
+	color: $param.model.tFont.selectColor;
+}
+$end

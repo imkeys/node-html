@@ -1,0 +1,6 @@
+#ui-$param.model._id {
+	position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: ${param.model.height}px;
+}

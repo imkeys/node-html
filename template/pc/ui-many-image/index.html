@@ -1,0 +1,146 @@
+<div class="ui-many-image" id="ui-$param.model._id" data-approach='$param.model.approach.jsonText'>
+  $if(param.model.format == 0 || param.model.format == 1 || param.model.format == 2)
+	<div class="center-$param.model.format">
+		<div class="list">
+			<ul >
+				$foreach(item in param.model.data)
+				<li>
+					<a href="$item.url" title="$item.title">
+            <img src="$item.pic?x-bce-process=image/quality,q_80" alt="$item.title" title="$item.title" />
+          </a>
+				</li>
+				$end
+			</ul>
+		</div>
+		<div class="dots">
+			<ul></ul>
+		</div>
+		<div class="arrow">
+			<div class="prev">
+				<span></span>
+			</div>
+			<div class="next">
+				<span></span>
+			</div>
+		</div>
+  </div>
+  $end
+
+  $if(param.model.format == 3 || param.model.format == 4)
+  <div class="center-$param.model.format">
+		<div class="list">
+			<ul class="group">
+				$foreach(item in param.model.data)
+				<li class="item">
+          <div class="origin">
+            $if(item.url)
+              <a href="$item.url" target="$item.target">
+                <img src="$item.pic" alt="$item.title" title="$item.title" />
+                <h3>$item.title</h3>
+              </a>
+            $else
+              <a href="javascript:;">
+                <img src="$item.pic" alt="$item.title" title="$item.title" />
+                <h3>$item.title</h3>
+              </a>            
+            $end
+          </div>
+				</li>
+				$end
+			</ul>
+		</div>
+		<div class="dots">
+			<ul></ul>
+    </div>
+    <div class="prev">
+      <span></span>
+    </div>
+    <div class="next">
+      <span></span>
+    </div>
+  </div>
+	$end
+	
+	$if(param.model.format == 5)
+  <div class="center-$param.model.format">
+		<div class="bigimg">
+			<ul class="list">
+				$foreach(item in param.model.data)
+				<li class="item">
+					<div class="origin">
+						$if(item.url)
+              <a href="$item.url" target="$item.target">
+                <img src="$item.pic" alt="$item.title" title="$item.title" />
+                <h3>$item.title</h3>
+              </a>
+            $else
+              <a href="javascript:;">
+                <img src="$item.pic" alt="$item.title" title="$item.title" />
+                <h3>$item.title</h3>
+              </a>            
+            $end
+					</div>
+				</li>
+				$end
+			</ul>
+			<div class="dots">
+				<ul></ul>
+			</div>
+			<div class="prev">
+				<span></span>
+			</div>
+			<div class="next">
+				<span></span>
+			</div>
+		</div>
+		<div class="thums">
+			<ul class="list2">
+				$foreach(item in param.model.data)
+				<li class="item2">
+					<div class="img2">
+						<img src="$item.pic" alt="$item.title" title="$item.title"/>
+					</div>
+				</li>
+				$end
+			</ul>
+		</div>
+  </div>
+	$end
+		
+	$if(param.model.format == 6)
+  <div class="center-$param.model.format">
+		<div class="bigimg">
+			<ul class="list">
+				$foreach(item in param.model.data)
+				<li class="item" style="height: ${param.model.height}px;">
+					<div class="inner">
+						<div class="origin">
+							$if(item.url)
+                <a href="$item.url" target="$item.target">
+                  <img src="$item.pic" alt="$item.title" title="$item.title" />
+                  <h3>$item.title</h3>
+                </a>
+              $else
+                <a href="javascript:;">
+                  <img src="$item.pic" alt="$item.title" title="$item.title" />
+                  <h3>$item.title</h3>
+                </a>            
+              $end
+						</div>
+					</div>
+				</li>
+				$end
+			</ul>
+			<div class="dots">
+				<ul></ul>
+			</div>
+			<div class="prev">
+				<span></span>
+			</div>
+			<div class="next">
+				<span></span>
+			</div>
+		</div>
+  </div>
+  $end
+</div>

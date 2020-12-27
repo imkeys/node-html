@@ -1,0 +1,15 @@
+.ui-header $param._empty #ui-$param.model._id,
+.ui-container $param._empty #ui-$param.model._id {
+	position: absolute;
+	left: ${param.model.x}px;
+    top: ${param.model.y}px;
+    z-index: ${param.model.z};
+	width: ${param.model.width}px;
+	height: ${param.model.height}px;
+}
+
+.ui-header $param._empty #ui-$param.model._id .img img,
+.ui-container $param._empty #ui-$param.model._id .img img {
+	width: ${param.model.width}px;
+	height: ${param.model.height}px;
+}

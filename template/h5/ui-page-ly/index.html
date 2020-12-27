@@ -1,0 +1,242 @@
+<div class="ui-form" id="ui-$param.model._id">
+	<form action="/home/from-submit" data-formid="$param.model.formId" class="ui-control-layout center-$param.model.format" id="ui-form-$param.model._id">
+		<div class="main">
+			<div class="list">
+              	$foreach(item in param.model.fields)
+				<div class="rows">
+					<div class="label">
+						<label for="$item.isNull">$item.label</label>
+                      	$if(item.isNull)
+                      	$else
+						<i>*</i>
+                      	$end
+					</div>
+					<div class="control">
+                      	$if(item.format == 0)
+						<div class="text">
+                          	$if(item.isNull)
+							<input type="text" value="$item.data" name="$item.id" label="$item.label" placeholder="$item.placeholder" maxlength="$item.maxSize" />
+                          	$else
+                          	<input type="text" value="$item.data" name="$item.id" label="$item.label" placeholder="$item.placeholder" maxlength="$item.maxSize" data-required="required" />
+                          	$end
+						</div>
+                      	$end
+                      
+                      	$if(item.format == 1)
+						<div class="textarea">
+                          	$if(item.isNull)
+							<textarea type="text" value="$item.data" name="$item.id" label="$item.label" placeholder="$item.placeholder" maxlength="$item.maxSize"></textarea>
+                          	$else
+                          	<textarea type="text" value="$item.data" name="$item.id" label="$item.label" placeholder="$item.placeholder" maxlength="$item.maxSize" data-required="required"></textarea>
+                          	$end
+						</div>
+                      	$end
+                      
+                      	$if(item.format == 2)
+						<div class="text">
+                          	$if(item.isNull)
+							<input type="phone" value="$item.data" name="$item.id" label="$item.label"placeholder="$item.placeholder" maxlength="11" />
+                          	$else
+                          	<input type="phone" value="$item.data" name="$item.id" label="$item.label" placeholder="$item.placeholder" maxlength="11" data-required="phone" />
+                          	$end
+						</div>
+                      	$end
+                      
+                      	$if(item.format == 3)
+						<div class="select">
+                          	$if(item.isNull)
+							<select name="$item.id" >
+                              	$foreach(item2 in item.data)
+								<option	value="$item2" key="$index2">$item2</option>
+                              	$end
+							</select>
+                          	$else
+                          	<select name="$item.id" label="$item.label" data-required="required">
+                              	$foreach(item2 in item.data)
+								<option	value="$item2" key="$index2">$item2</option>
+                              	$end
+							</select>
+                          	$end
+						</div>
+                      	$end
+                      
+                        $if(item.format == 6)
+                        <div class="radio">
+                          $if(item.isNull)
+                            $foreach(item2 in item.data)
+                            <label class="item">
+                              <input type="radio" name="$item.id" value="$item2.id" label="$item.label" placeholder="$item.placeholder" />
+                              <span>$item2.text</span>
+                            </label>
+                            $end
+                          $else
+                            $foreach(item2 in item.data)
+                            <label class="item">
+                              <input type="radio" name="$item.id" value="$item2.id" label="$item.label" data-required="required" placeholder="$item.placeholder"  />
+                              <span>$item2.text</span>
+                            </label>
+                            $end
+                          $end
+                        </div>
+                        $end
+
+                        $if(item.format == 7)
+                        <div class="checkbox">
+                          $if(item.isNull)
+                            $foreach(item2 in item.data)
+                            <label class="item">
+                              <input type="checkbox" name="$item.id" value="$item2.id" label="$item.label" placeholder="$item.placeholder" />
+                              <span>$item2.text</span>
+                            </label>
+                            $end
+                          $else
+                            $foreach(item2 in item.data)
+                            <label class="item">
+                              <input type="checkbox" name="$item.id" value="$item2.id" label="$item.label" data-required="required" placeholder="$item.placeholder"  />
+                              <span>$item2.text</span>
+                            </label>
+                            $end
+                          $end
+                        </div>
+                        $end
+
+                        $if(item.format == 9)
+                        <div class="huxing">
+                          <div class="txt">
+                            <dl>
+                            	<dd style="white-space: nowrap;">$item.placeholder</dd>
+                            </dl>
+                            $if(item.isNull)
+                            <input type="hidden" value="$item.data" name="$item.id" label="$item.label" placeholder="$item.placeholder" maxlength="$item.maxSize" readonly />
+                            $else
+                            <input type="hidden" value="$item.data" name="$item.id" label="$item.label" placeholder="$item.placeholder" maxlength="$item.maxSize" readonly data-required="huxing" />
+                            $end
+                            <div class="f"></div>
+                          </div>
+                          <div class="drop">
+                            <div class="inn">
+                              <div class="head">
+                                <h2>— 请选择您的房屋户型 —</h2>
+                              </div>
+                              <div class="main">
+                                <dl>
+                                  <dd>
+                                    <span>1室</span>
+                                  </dd>
+                                  <dd>
+                                    <span>2室</span>
+                                  </dd>
+                                  <dd>
+                                    <span>3室</span>
+                                  </dd>
+                                  <dd>
+                                    <span>4室</span>
+                                  </dd>
+                                  <dd>
+                                    <span>5室</span>
+                                  </dd>
+                                  <dd>
+                                    <span>6室</span>
+                                  </dd>
+                                </dl>
+                                <dl>
+                                  <dd>
+                                    <span>1厅</span>
+                                  </dd>
+                                  <dd>
+                                    <span>2厅</span>
+                                  </dd>
+                                  <dd>
+                                    <span>3厅</span>
+                                  </dd>
+                                  <dd>
+                                    <span>4厅</span>
+                                  </dd>
+                                  <dd>
+                                    <span>5厅</span>
+                                  </dd>
+                                  <dd>
+                                    <span>6厅</span>
+                                  </dd>
+                                </dl>
+                                <dl>
+                                  <dd>
+                                    <span>1厨</span>
+                                  </dd>
+                                  <dd>
+                                    <span>2厨</span>
+                                  </dd>
+                                  <dd>
+                                    <span>3厨</span>
+                                  </dd>
+                                  <dd>
+                                    <span>4厨</span>
+                                  </dd>
+                                  <dd>
+                                    <span>5厨</span>
+                                  </dd>
+                                  <dd>
+                                    <span>6厨</span>
+                                  </dd>
+                                </dl>
+                                <dl>
+                                  <dd>
+                                    <span>1卫</span>
+                                  </dd>
+                                  <dd>
+                                    <span>2卫</span>
+                                  </dd>
+                                  <dd>
+                                    <span>3卫</span>
+                                  </dd>
+                                  <dd>
+                                    <span>4卫</span>
+                                  </dd>
+                                  <dd>
+                                    <span>5卫</span>
+                                  </dd>
+                                  <dd>
+                                    <span>6卫</span>
+                                  </dd>
+                                </dl>
+                                <dl>
+                                  <dd>
+                                    <span>1阳台</span>
+                                  </dd>
+                                  <dd>
+                                    <span>2阳台</span>
+                                  </dd>
+                                  <dd>
+                                    <span>3阳台</span>
+                                  </dd>
+                                  <dd>
+                                    <span>4阳台</span>
+                                  </dd>
+                                  <dd>
+                                    <span>5阳台</span>
+                                  </dd>
+                                  <dd>
+                                    <span>6阳台</span>
+                                  </dd>
+                                </dl>
+                              </div>
+                              <div class="button">
+                                <a href="javascript:;" class="close">确 认</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        $end
+                      
+					</div>
+				</div>
+                $end
+			</div>
+			<div class="foot">
+				<div class="submit">
+					<input type="submit" name="submit" value="$param.model.button.text" />
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

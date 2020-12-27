@@ -1,0 +1,8 @@
+.ui-page-contact .center-0 .tit .p2 a{color:$param._defaultColor;}
+
+
+$if(param.defaultColor!='' || param.defaultColor !='rgb(255,255,255)')
+.ui-page-contact .center-0 .foot .btn{background:$param._defaultColor!important;color:#fff!important;}
+$else
+.ui-page-contact .center-0 .foot .btn{background:#333!important;color:#fff!important;}
+$end

@@ -1,0 +1,80 @@
+#ui-$param.model._id {
+	z-index: ${param.model.z};
+	width: ${param.model.width}px;
+	height: ${param.model.height}px;
+}
+
+#ui-$param.model._id $param._empty .video-container {
+	position: relative;
+	width: ${param.model.width}px;
+	height: ${param.model.height}px;
+}
+
+#ui-$param.model._id $param._empty .iframe,
+#ui-$param.model._id $param._empty .player {
+	position: relative;
+	z-index: 1;
+	height: 100%;
+	background: #000000;
+}
+
+#ui-$param.model._id $param._empty .iframe iframe {
+	width: 100%;
+	height: 100%;
+}
+
+#ui-$param.model._id $param._empty .cover {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 2;
+	background-color: #eeeeee;
+	$if(param.model.cover)
+		background-image: url($param.model.cover);
+		background-position: center center;
+		background-size: cover;
+		backgrond-repeat: no-repeat;
+	$end
+}
+
+#ui-$param.model._id $param._empty .cover .play {
+	position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 60px;
+    height: 60px;
+    margin: -30px 0 0 -30px;
+    line-height: 60px;
+    text-align: center;
+    background: rgba(0,0,0,.2);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+#ui-$param.model._id $param._empty .cover .play:hover {
+	transform: scale(1.05);
+    background: rgba(0,0,0,.25);
+}
+
+#ui-$param.model._id $param._empty .cover i {
+	font-size: 30px;
+    color: #ffffff;
+}
+
+.ui-control-layout $param._empty #ui-$param.model._id,
+.ui-sub $param._empty #ui-$param.model._id {
+	position: absolute;
+	left: ${param.model.x}px;
+	top: ${param.model.y}px;
+	z-index: ${param.model.z};
+	height: auto;
+}
+
+.ui-control-layout $param._empty #ui-$param.model._id .ui-control-layout,
+.ui-sub $param._empty #ui-$param.model._id .ui-control-layout {
+	width: ${param.model.width}px;
+	height: ${param.model.height}px;
+}

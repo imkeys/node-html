@@ -1,0 +1,327 @@
+<div class="ui-product-list" id="ui-$param.model._id" data-approach='$param.model.approach.jsonText'>
+  <div class="ui-control-layout center-$param.model.format">
+    $if(param.model.format == 0)
+    <ul class="list">
+      $foreach(item in param.model.data)
+      <li class="item ui-column-$param.model.columnFormat">
+        <div class="cell">
+          <div class="mack touch-$param.model.imgEff">
+            <div class="img ui-scale-$param.model.scale">
+              <a href="$item.link" target="_blank" title="$item.title">
+                <img src="$item.pic?x-bce-process=image/resize,w_600,h_600/quality,q_80" title="$item.title" alt="$item.title" />
+              </a>
+            </div>
+            <div class="loupe">
+            	<a href="$item.link" title="$item.title" target="_blank" class="d">
+              		<i class="icon-loupe"></i>
+              	</a>
+            </div>
+            $if(item.qrCode)
+            <div class="rcode">
+              <a href="$item.link" title="$item.title" target="_blank">
+                <img src="$item.qrCode" />
+                <span>扫码预定</span>
+              </a>
+            </div>
+            $end
+          </div>
+          <div class="exp">
+            <h3>
+              <a href="$item.link" title="$item.title" target="_blank">$item.title</a>
+            </h3>
+          </div>
+        </div>
+      </li>
+      $end
+    </ul>
+    $end
+
+    $if(param.model.format == 1)
+    <ul class="list">
+      $foreach(item in param.model.data)
+      <li class="item ui-column-$param.model.columnFormat">
+        <div class="cell">
+          <div class="mack">
+            <div class="img ui-scale-$param.model.scale">
+              <a href="$item.link" target="_blank" title="$item.title">
+                <img src="$item.pic?x-bce-process=image/resize,w_600,h_600/quality,q_80" title="$item.title" alt="$item.title" />
+              </a>
+            </div>
+            $if(item.qrCode)
+            <div class="rcode">
+              <a href="$item.link" title="$item.title" target="_blank">
+                <img src="$item.qrCode" />
+                <span>扫码预定</span>
+              </a>
+            </div>
+            $end
+          </div>
+          <div class="exp">
+            <h3>
+              <a href="$item.link" title="$item.title" target="_blank">$item.title</a>
+            </h3>
+          </div>
+        </div>
+      </li>
+      $end
+    </ul>
+    $end
+
+    $if(param.model.format == 2)
+    <ul class="list">
+      $foreach(item in param.model.data)
+      <li class="item ui-column-$param.model.columnFormat">
+        <div class="cell">
+          <div class="cell-img ui-scale-$param.model.scale">
+            <a href="$item.link" title="$item.title" target="_blank">
+              <img src="$item.pic?x-bce-process=image/resize,w_600,h_600/quality,q_80" title="$item.title" alt="$item.title" style="border-radius: 0px;">
+            </a>
+          </div>
+          <h3 class="cell-title">
+            <a href="$item.link" title="$item.title" target="_blank">$item.title</a>
+          </h3>
+        </div>
+      </li>
+      $end
+    </ul>
+    $end
+
+    $if(param.model.format == 3)
+    <div class="main">
+      <div class="scroll">
+        <ul class="list">
+          $foreach(item in param.model.data)
+          <li class="item">
+            <div class="cell touch-$param.model.imgEff">
+              <div class="cell-img">
+                <a class="img ui-scale-$param.model.scale" href="$item.link" title="$item.title" target="_blank">
+                  <img src="$item.pic?x-bce-process=image/resize,w_600,h_600/quality,q_80" alt="$item.title" title="$item.title" />
+                </a>
+                <div class="loupe">
+                    <a href="$item.link" title="$item.title" target="_blank" class="d">
+                        <i class="icon-loupe"></i>
+                    </a>
+                </div>
+                $if(item.qrCode)
+                  <div class="rcode">
+                    <a href="$item.link" title="$item.title" target="_blank">
+                      <img src="$item.qrCode" />
+                      <span>扫码预定</span>
+                    </a>
+                  </div>
+                $end
+              </div>
+              <div class="cell-exp">
+                <h3 class="cell-title">
+                  <a href="$item.link" title="$item.title" target="_blank">$item.title</a>
+                </h3>
+              </div>
+            </div>
+          </li>
+          $end
+        </ul>
+      </div>
+    </div>
+    $end
+
+    $if(param.model.format == 4)
+    <div class="main">
+      <div class="prev">
+        <b></b>
+      </div>
+      <div class="next">
+        <b></b>
+      </div>
+      <div class="scroll">
+        <ul class="list">
+          $foreach(item in param.model.data)
+          <li class="item">
+            <div class="cell touch-$param.model.imgEff">
+              <div class="cell-img">
+                <a class="img ui-scale-$param.model.scale" href="$item.link" title="$item.title" target="_blank">
+                  <img src="$item.pic?x-bce-process=image/resize,w_600,h_600/quality,q_80" alt="$item.title" title="$item.title" />
+                </a>
+                <div class="loupe">
+                    <a href="$item.link" title="$item.title" target="_blank" class="d">
+                        <i class="icon-loupe"></i>
+                    </a>
+                </div>
+                $if(item.qrCode)
+                  <div class="rcode">
+                    <a href="$item.link" title="$item.title" target="_blank">
+                      <img src="$item.qrCode" />
+                      <span>扫码预定</span>
+                    </a>
+                  </div>
+                $end
+              </div>
+              <div class="cell-exp">
+                <h3 class="cell-title">
+                  <a href="$item.link" title="$item.title" target="_blank">$item.title</a>
+                </h3>
+              </div>
+            </div>
+          </li>
+          $end
+        </ul>
+      </div>
+    </div>
+    $end
+
+    $if(param.model.format == 5)
+    <ul class="list">
+      $foreach(item in param.model.data)
+      <li class="item ui-column-$param.model.columnFormat">
+        <div class="cell">
+          <div class="cell-img">
+            <div class="ui-scale-$param.model.scale">
+              <a href="$item.link" title="$item.title" target="_blank">
+                <img src="$item.pic?x-bce-process=image/resize,w_600,h_600/quality,q_80" title="$item.title" alt="$item.title" style="border-radius: 0px;">
+              </a>
+            </div>
+          </div>
+          <div class="cell-exp">
+            <h3 class="cell-title">
+              <a href="$item.link" title="$item.title" target="_blank">$item.title</a>
+            </h3>
+          </div>
+        </div>
+      </li>
+      $end
+    </ul>
+    $end
+
+      $if(param.model.format == 6)
+      <ul class="list scale-$param.model.scale">
+        $set(index = 0)
+        $foreach(item in param.model.data)
+        $set(index = index + 1)
+        $set(date = getObjectDate(item.createDate))
+        $if(index < 6) <li class="item">
+          <div class="cell">
+            <div class="img ui-scale-$param.model.scale">
+              <a href="$item.link" title="$item.title" target="_balnk">
+                <img src="$item.pic?x-bce-process=image/resize,w_600,h_600/quality,q_80" title="$item.title" alt="$item.title" />
+              </a>
+            </div>
+            <div class="exp">
+              <h3>
+                <a href="$item.link" title="$item.title" target="_balnk">$item.title</a>
+              </h3>
+              $if(index == 2)
+              <p>$item.caption</p>
+              $end
+            </div>
+          </div>
+          </li>
+          $end
+          $end
+      </ul>
+      $end
+
+    $if(param.model.format == 7)
+    <ul class="list">
+      $foreach(item in param.model.data)
+      <li class="item ui-column-$param.model.columnFormat">
+        <div class="cell">
+          <h3 class="cell-title">
+            <a href="$item.link" title="$item.title" target="_blank">$item.title</a>
+          </h3>
+        </div>
+      </li>
+      $end
+    </ul>
+    $end
+
+    $if(param.model.format == 8)
+    <ul class="list scale-$param.model.scale">
+      $set(index = 0)
+      $foreach(item in param.model.data)
+      $set(index = index + 1)
+      $set(date = getObjectDate(item.createDate))
+      $if(index < 6) <li class="item">
+        <div class="cell">
+          <a href="$item.link" title="$item.title" target="_balnk">
+            <div class="img ui-scale-$param.model.scale">
+              <img src="$item.pic?x-bce-process=image/resize,w_600,h_600/quality,q_80" title="$item.title" alt="$item.title" />
+            </div>
+            <div class="exp">
+              <h3>$item.title</h3>
+              $if(index == 1)
+              <span>查看详情</span>
+              $end
+            </div>
+          </a>
+        </div>
+        </li>
+        $end
+        $end
+    </ul>
+    $end
+
+	  $if(param.model.format == 9)
+    <div class="main">
+      <div class="prev">
+        <b></b>
+      </div>
+      <div class="next">
+        <b></b>
+      </div>
+      <div class="list">
+        <ul>
+          $foreach(item in param.model.data)
+          $set(date = getObjectDate(item.createDate))
+          <li>
+            <div class="cell">
+              <div class="cell-img ui-scale-$param.model.scale">
+                <a href="$item.link" title="$item.title" target="_blank">
+                  <img src="$item.pic?x-bce-process=image/resize,w_1200,h_1200/quality,q_80" alt="$item.title" title="$item.title" />
+                </a>
+              </div>
+              <div class="cell-exp">
+                <div class="cell-title">
+                  <a href="$item.link" title="$item.title" target="_blank">$item.title</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          $end
+        </ul>
+      </div>
+      <div class="dots">
+        <ul></ul>
+      </div>
+    </div>
+    $end
+
+	  $if(param.model.format == 10)
+    <div class="main">
+      <div class="swiper-container">
+        <dl class="swiper-wrapper">
+          $foreach(item in param.model.data)
+          $set(date = getObjectDate(item.createDate))
+          <dd class="swiper-slide">
+            <div class="cell">
+              <div class="cell-img ui-scale-$param.model.scale">
+                <a href="$item.link" title="$item.title" target="_blank">
+                  <img src="$item.pic?x-bce-process=image/resize,w_1200,h_1200/quality,q_80" alt="$item.title" title="$item.title" />
+                </a>
+              </div>
+              <div class="cell-exp">
+                <div class="cell-title">
+                  <a href="$item.link" title="$item.title" target="_blank">$item.title</a>
+                </div>
+              </div>
+            </div>
+          </dd>
+          $end
+        </dl>
+      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-pagination" style="bottom: 10px;"></div>
+    </div>
+    $end
+
+  </div>
+</div>

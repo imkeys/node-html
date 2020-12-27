@@ -1,0 +1,34 @@
+#ui-$param.model._id {
+  background-color: $param.model.backgroundColor;
+  $if(param.model.backgroundImage)
+    background-image: url($param.model.backgroundImage)
+  $end
+}
+#ui-$param.model._id $param._empty .exp {
+  color: $param.model.fontColor;
+}
+#ui-$param.model._id $param._empty .exp a {
+  background-color: $param._defaultColor;
+}
+
+#ui-$param.model._id $param._empty .center-2 .img {
+  background-color: $param._defaultColor;
+}
+
+$if(param.model.x != 0 || param.model.y != 0)
+  #ui-$param.model._id {
+    position: absolute;
+    left: ${param.model.x}px;
+    top: ${param.model.y}px;
+    z-index: ${param.model.z};
+  }
+
+  #ui-$param.model._id $param._empty .ui-control-layout {
+    $if(param.model.format == 0 || param.model.format == 1 || param.model.format == 2)
+		width: ${param._width};
+	$else
+    	width: ${param.model.width}px;
+	$end
+    height: ${param.model.height}px;
+  }
+$end

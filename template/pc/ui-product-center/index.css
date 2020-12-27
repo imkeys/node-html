@@ -1,0 +1,27 @@
+#ui-$param.model._id {
+  background-color: $param.model.backgroundColor;
+  $if(param.model.backgroundImage)
+    background-image: url($param.model.backgroundImage)
+  $end
+}
+#ui-$param.model._id $param._empty .center-0 .panel,
+#ui-$param.model._id $param._empty .center-0 .main {
+  height: $param.model.height;
+}
+#ui-$param.model._id $param._empty .center-0 .panel h3 {
+  background-color: $param._defaultColor;
+}
+#ui-$param.model._id $param._empty .center-0 .tel dd {
+  color: $param._defaultColor;
+}
+
+#ui-$param.model._id $param._empty .center-1 .panel h3 {
+  background-color: $param._defaultColor;
+}
+#ui-$param.model._id $param._empty .center-1 .contact{background-color: $param._defaultColor;}
+
+#ui-$param.model._id $param._empty .center-1 .menu li:hover{background-color: $param._defaultColor;}
+#ui-$param.model._id $param._empty .center-1 .menu li:hover a{color:#fff;}
+
+#ui-$param.model._id $param._empty .center-$param.model.format .cell{border-radius:$param.model.radius;}
+#ui-$param.model._id $param._empty .center-$param.model.format .cell .img img{border-radius:$param.model.radius;}

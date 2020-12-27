@@ -1,0 +1,135 @@
+$set(filter = param.model.filter)
+$set(fields = filter.fields)
+<div class="ui-page-article-list">
+  <div class="center-$param.model.format">
+    $if(param.model.category == null)
+    $else
+    $if(filter.isOpen == false)
+    <div class="catelist clearfix">
+      $foreach(item in param.model.category)
+      <a class="anav" href="$item.link#d" title="$item.title">$item.title</a>
+      $end
+    </div>
+    $else
+    <div class="article-filter-wrap-mobile">
+      <section class="filter-tab">
+        $foreach(field in fields)
+        <div class="tab-item">
+          <div class="wrap">
+            <span class="type">
+              $field.label
+            </span>
+            <div class="collapse-icon">
+            </div>
+          </div>
+        </div>
+        $end
+      </section>
+      <section class="filter-list">
+        $foreach(field in fields)
+        <div class="wrap">
+          $foreach(item in field.nodes)
+            <div class="filter-item">
+              <a 
+                href="$item.url"
+                class="item-url $if(item.isCurrent) active $end">
+                $item.text
+              </a>
+            </div>
+          $end
+        </div>
+        $end
+      </section>
+      $if(fields.length > 3)
+      <div class="scroll-arrow">
+        <div class="arrow-icon"></div>
+      </div>
+      $end
+    </div>
+      $end
+      $end
+      <div class="newslist" id="d">
+        <ul class="list" id="list-content">
+          $if(param.model.total ==0)
+          <div class="nodata"><img
+              src="https://saas-image.jingwxcx.com/view/01/no-data.png" /></div>
+          $end
+          $foreach(item in param.model.articeData)
+          $set(date = getObjectDate(item.createDate))
+          $if(param.model.format==0)
+          <li class="item clearfix">
+            <a href="$item.link" title="$item.title">
+              <div class="imgm">
+                <figure class="img ui-scale-$param.model.scale">
+                  $if(item.pic)
+                  <img
+                    src="$item.pic?x-bce-process=image/resize,w_600,h_600/quality,q_50"
+                    title="$item.title" alt="$item.title" />
+                  $else
+                  <img
+                    src="https://saas-image.jingwxcx.com/upload_files/2020/10/16/b02d2ed168c2043c079bb2bcc8d26943.png"
+                    title="$item.title" />
+                  $end
+                </figure>
+              </div>
+              <div class="exp">
+                <h3 class="tit">$item.title</h3>
+                <p>$item.caption</p>
+                <div class="time"><span>日期：$date.year - $date.month -
+                    $date.day</span><span>浏览量：$item.scan</span></div>
+              </div>
+            </a>
+          </li>
+
+          $elseif(param.model.format==1)
+          <li class="item">
+            <a href="$item.link" title="$item.title">
+              <div class="imgm">
+                <figure class="img ui-scale-$param.model.scale">
+                  $if(item.pic)
+                  <img
+                    src="$item.pic?x-bce-process=image/resize,w_600,h_600/quality,q_50"
+                    title="$item.title" alt="$item.title" />
+                  $else
+                  <img
+                    src="https://saas-image.jingwxcx.com/upload_files/2020/10/16/b02d2ed168c2043c079bb2bcc8d26943.png"
+                    title="$item.title" />
+                  $end
+                </figure>
+              </div>
+              <div class="txt">
+                <h3 class="tit">$item.title</h3>
+              </div>
+            </a>
+          </li>
+
+          $elseif(param.model.format==2)
+          <li class="item clearfix">
+            <a class="cell" href="$item.link" title="$item.title">
+              <div class="exp">
+                <h3 class="tit">$item.title</h3>
+                <div class="time">
+                  <span>$date.year-$date.month-$date.day</span>
+                  <span>$item.scan次浏览</span></div>
+              </div>
+            </a>
+          </li>
+
+          $end
+          $end
+        </ul>
+        $if(param.model.total ==0)
+        $else
+        $if(param.model.isNext)
+        <div class="foot_page" id="foot_page">
+          <span id="content-soap" atr-next="1">滑动查询更多</span>
+        </div>
+        $else
+        <div class="foot_page" id="foot_page">
+          <span id="content-soap" atr-next="0">已全部显示完</span>
+        </div>
+        $end
+        $end
+      </div>
+    </div>
+  </div>

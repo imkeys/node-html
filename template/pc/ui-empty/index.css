@@ -1,0 +1,8 @@
+#ui-$param.model._id {
+	height: ${param.model.height}px;
+	height: $param.model.height;
+
+	$if(param.model.backgroundColor)
+  		background-color: $param.model.backgroundColor;
+	$end
+}

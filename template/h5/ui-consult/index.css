@@ -1,0 +1,20 @@
+#ui-$param.model._id $param._empty {
+	background: url($param.model.backgroundImage) no-repeat center center/contain;
+	background-size: cover;
+}
+
+#ui-$param.model._id $param._empty .ui-control-layout h3,
+#ui-$param.model._id $param._empty .ui-control-layout h4 {
+	font-weight: normal;
+	text-align: $param.model.align;
+	color: $param.model.color;
+}
+
+#ui-$param.model._id $param._empty .ui-control-layout .button a {
+	color: $param.model.color;
+	background-color: $param.model.buttons.backgroundColor;
+}
+
+#ui-$param.model._id $param._empty .ui-control-layout .button a:nth-child(2) {
+	background-color: $param.model.buttons.backgroundColor;
+}

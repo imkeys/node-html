@@ -1,0 +1,549 @@
+<div class="ui-article-list" id="ui-$param.model._id" data-approach='$param.model.approach.jsonText'>
+  $if(param.model.animate != null)
+  <div class="ui-control-layout center-$param.model.format">
+    $else
+    <div class="ui-control-layout center-$param.model.format">
+      $end
+      $if(param.model.format == 0)
+      <ul class="list">
+        $foreach(item in param.model.data)
+        <li class="item">
+          <div class="cell">
+            <div class="img">
+              <a href="$item.link" title="$item.title" target="_balnk" class="ui-scale-$param.model.scale">
+                <img src="$item.pic?x-bce-process=image/resize,w_600,h_600/quality,q_80" title="$item.title" alt="$item.title" />
+              </a>
+            </div>
+            <h3>
+              <a href="$item.link" title="$item.title" target="_balnk">$item.title</a>
+            </h3>
+          </div>
+        </li>
+        $end
+      </ul>
+      $end
+
+      $if(param.model.format == 1)
+      <ul class="list">
+        $foreach(item in param.model.data)
+        $set(date = getObjectDate(item.createDate))
+        <li class="item">
+          <div class="cell">
+            <div class="img">
+              <a href="$item.link" title="$item.title" target="_balnk" class="ui-scale-$param.model.scale">
+                <img src="$item.pic?x-bce-process=image/resize,w_600,h_600/quality,q_80" title="$item.title" alt="$item.title" />
+              </a>
+            </div>
+            <div class="exp">
+              <h3>
+                <a href="$item.link" title="$item.title" target="_balnk">$item.title</a>
+              </h3>
+              <p>$item.caption</p>
+              <em class="time">$date.year - $date.month - $date.day</em>
+            </div>
+          </div>
+        </li>
+        $end
+      </ul>
+      $end
+
+      $if(param.model.format == 2)
+      <ul class="list">
+        $foreach(item in param.model.data)
+        <li class="item">
+          <div class="img">
+            <a href="$item.link" title="$item.title" target="_balnk" class="ui-scale-$param.model.scale">
+              <img src="$item.pic?x-bce-process=image/resize,w_600,h_600/quality,q_80" title="$item.title" alt="$item.title" />
+            </a>
+          </div>
+          <h3>
+            <a href="$item.link" title="$item.title" target="_balnk">$item.title</a>
+          </h3>
+          <p>$item.caption</p>
+        </li>
+        $end
+      </ul>
+      $end
+
+      $if(param.model.format == 3)
+      <ul class="list">
+        $foreach(item in param.model.data)
+        $set(date = getObjectDate(item.createDate))
+
+        <li class="item">
+          <div class="cell">
+            <div class="date">
+              <i>$date.day</i>
+              <em>$date.year-$date.month</em>
+            </div>
+            <h3>
+              <a href="$item.link" title="$item.title" target="_balnk">$item.title</a>
+            </h3>
+            <p>$item.caption</p>
+          </div>
+        </li>
+        $end
+      </ul>
+      $end
+
+      $if(param.model.format == 4)
+      <ul class="list">
+        $set(index = 0)
+        $foreach(item in param.model.data)
+        $set(index = index + 1)
+        $set(date = getObjectDate(item.createDate))
+        $if(index == 1)
+        <li class="item">
+          <a href="$item.link" title="$item.title" target="_balnk">
+            <div class="cell">
+              <div class="img">
+                <img src="$item.pic?x-bce-process=image/resize,w_600,h_600/quality,q_80" title="$item.title" alt="$item.title" />
+              </div>
+              <h3>
+                $item.title
+              </h3>
+              <p>$item.caption</p>
+            </div>
+          </a>
+        </li>
+        $else
+        <li class="item2">
+          <a href="$item.link" title="$item.title" target="_balnk">
+            <div class="cell">
+              <div class="date">
+                <i>$date.month-$date.day</i>
+                <em>$date.year</em>
+              </div>
+              <h3>
+                $item.title
+              </h3>
+              <p>$item.caption</p>
+            </div>
+          </a>
+        </li>
+        $end
+        $end
+      </ul>
+      $end
+
+      $if(param.model.format == 5)
+      <ul class="list">
+        $set(index = 0)
+        $foreach(item in param.model.data)
+        $set(index = index + 1)
+        $set(date = getObjectDate(item.createDate))
+        $if(index == 1)
+        <li class="item">
+          <div class="cell">
+            <div class="img">
+              <a href="$item.link" title="$item.title" target="_balnk">
+                <img src="$item.pic?x-bce-process=image/resize,w_600,h_600/quality,q_80" title="$item.title" alt="$item.title" />
+              </a>
+            </div>
+          </div>
+        </li>
+        $else
+        <li class="item2">
+          <div class="cell">
+            <div class="date">
+              <i>$date.day</i>
+              <em>$date.year-$date.month</em>
+            </div>
+            <h3>
+              <a href="$item.link" title="$item.title" target="_balnk">$item.title</a>
+            </h3>
+            <p>$item.caption</p>
+          </div>
+        </li>
+        $end
+        $end
+      </ul>
+      $end
+
+      $if(param.model.format == 6)
+      <ul class="list scale-$param.model.scale">
+        $set(index = 0)
+        $foreach(item in param.model.data)
+        $set(index = index + 1)
+        $set(date = getObjectDate(item.createDate))
+        $if(index < 6) <li class="item">
+          <div class="cell">
+            <div class="img">
+              <a href="$item.link" title="$item.title" target="_balnk">
+                <img src="$item.pic?x-bce-process=image/resize,w_600,h_600/quality,q_80" title="$item.title" alt="$item.title" />
+              </a>
+            </div>
+            <div class="exp">
+              <h3>
+                <a href="$item.link" title="$item.title" target="_balnk">$item.title</a>
+              </h3>
+              $if(index == 2)
+              <p>$item.caption</p>
+              $end
+            </div>
+          </div>
+          </li>
+          $end
+          $end
+      </ul>
+      $end
+
+      $if(param.model.format == 7)
+      <ul class="list">
+        $foreach(item in param.model.data)
+        $set(date = getObjectDate(item.createDate))
+        <li class="item">
+          <div class="cell">
+            <a class="link" href="$item.link" title="$item.title" target="_balnk">
+              <div class="img ui-scale-$param.model.scale">
+                <img src="$item.pic?x-bce-process=image/resize,w_600,h_600/quality,q_80" title="$item.title" alt="$item.title" />
+              </div>
+              <div class="exp">
+                <h3>$item.title</h3>
+              </div>
+            </a>
+          </div>
+        </li>
+        $end
+      </ul>
+      $end
+
+      $if(param.model.format == 8)
+      <ul class="list scale-$param.model.scale">
+        $set(index = 0)
+        $foreach(item in param.model.data)
+        $set(index = index + 1)
+        $set(date = getObjectDate(item.createDate))
+        $if(index < 6) <li class="item">
+          <div class="cell">
+            <a href="$item.link" title="$item.title" target="_balnk">
+              <div class="img ui-scale-$param.model.scale">
+                <img src="$item.pic?x-bce-process=image/resize,w_600,h_600/quality,q_80" title="$item.title" alt="$item.title" />
+              </div>
+              <div class="exp">
+                <h3>$item.title</h3>
+                $if(index == 1)
+                <span>查看详情</span>
+                $end
+              </div>
+            </a>
+          </div>
+          </li>
+          $end
+          $end
+      </ul>
+      $end
+
+      $if(param.model.format == 9)
+      <ul class="list">
+        $foreach(item in param.model.data)
+        $set(date = getObjectDate(item.createDate))
+        <li class="item ui-column-$param.model.columnFormat">
+          <div class="cell">
+            <h3 class="cell-title">
+              <a href="$item.link" title="$item.title" target="_blank">$item.title</a>
+              <span>$date.year-$date.month-$date.day</span>
+            </h3>
+            <div class="cell-desc">
+              <p>$item.caption</p>
+            </div>
+          </div>
+        </li>
+        $end
+      </ul>
+      $end
+
+      $if(param.model.format == 10)
+      <ul class="list">
+        $foreach(item in param.model.data)
+        $set(date = getObjectDate(item.createDate))
+        <li class="item ui-column-$param.model.columnFormat">
+          <div class="cell">
+            <div class="cell-img">
+              <div class="ui-scale-$param.model.scale">
+                <a href="$item.link" title="$item.title" target="_blank">
+                  <img src="$item.pic?x-bce-process=image/resize,w_600,h_600/quality,q_80" title="$item.title" alt="$item.title" />
+                </a>
+              </div>
+            </div>
+            <div class="cell-exp">
+              <h3 class="cell-title">
+                <a href="$item.link" title="$item.title" target="_blank">$item.title</a>
+              </h3>
+              <div class="cell-desc">
+                <p>$item.caption</p>
+              </div>
+              <div class="cell-date">
+                <span>$date.year-$date.month-$date.day</span>
+              </div>
+            </div>
+          </div>
+        </li>
+        $end
+      </ul>
+      $end
+
+      $if(param.model.format == 11)
+      <ul class="list">
+        $foreach(item in param.model.data)
+        $set(date = getObjectDate(item.createDate))
+        <li class="item ui-column-$param.model.columnFormat">
+          <div class="cell">
+            <div class="cell-img">
+              <div class="ui-scale-$param.model.scale">
+                <a href="$item.link" title="$item.title" target="_blank">
+                  <img src="$item.pic?x-bce-process=image/resize,w_600,h_600/quality,q_80" title="$item.title" alt="$item.title" />
+                </a>
+              </div>
+            </div>
+            <div class="cell-exp">
+              <h3 class="cell-title">
+                <a href="$item.link" title="$item.title" target="_blank">$item.title</a>
+              </h3>
+              <div class="cell-desc">
+                <p>$item.caption</p>
+              </div>
+              <div class="cell-date">
+                <span>$date.year-$date.month-$date.day</span>
+              </div>
+            </div>
+          </div>
+        </li>
+        $end
+      </ul>
+      $end
+
+      $if(param.model.format == 12)
+      <ul class="list">
+        $set(index = 0)
+        $foreach(item in param.model.data)
+        $set(index = index + 1)
+        $set(date = getObjectDate(item.createDate))
+        <li class="item ui-column-$param.model.columnFormat">
+          $if(index <= param.model.columnFormat) <div class="cell2">
+            <div class="cell-img">
+              <div class="ui-scale-$param.model.scale">
+                <a href="$item.link" title="$item.title" target="_blank">
+                  <img src="$item.pic?x-bce-process=image/resize,w_600,h_600/quality,q_80" title="$item.title" alt="$item.title" />
+                </a>
+              </div>
+            </div>
+            <div class="cell-exp">
+              <h3 class="cell-title">
+                <a href="$item.link" title="$item.title" target="_blank">$item.title</a>
+              </h3>
+              <div class="cell-desc">
+                <p>$item.caption</p>
+              </div>
+              $if(param.model.isNdate)
+              $else
+              <div class="cell-date">
+                <span>$date.year-$date.month-$date.day</span>
+              </div>
+              $end
+            </div>
+    </div>
+    $else
+    <div class="cell">
+      <div class="cell-exp">
+        <h3 class="cell-title" $if(param.model.isNdate) $else style="margin-right: 120px;" $end>
+          <a href="$item.link" title="$item.title" target="_blank">$item.title</a>
+        </h3>
+        $if(param.model.isNdate)
+        $else
+        <div class="cell-date">
+          <span>$date.year-$date.month-$date.day</span>
+        </div>
+        $end
+      </div>
+    </div>
+    $end
+    </li>
+    $end
+    </ul>
+    $end
+
+    $if(param.model.format == 13)
+    <div class="main">
+      <div class="prev">
+        <b></b>
+      </div>
+      <div class="next">
+        <b></b>
+      </div>
+      <div class="scroll">
+        <ul class="list">
+          $foreach(item in param.model.data)
+          $set(date = getObjectDate(item.createDate))
+          <li class="item">
+            <div class="cell">
+              <div class="cell-img ui-scale-$param.model.scale">
+                <a href="$item.link" title="$item.title" target="_blank">
+                  <img src="$item.pic?x-bce-process=image/resize,w_600,h_600/quality,q_80" alt="$item.title" title="$item.title" />
+                </a>
+              </div>
+              <div class="cell-exp">
+                <h3 class="cell-title">
+                  <a href="$item.link" title="$item.title" target="_blank">$item.title</a>
+                </h3>
+                <div class="cell-desc">
+                  <p>$item.caption</p>
+                </div>
+                <div class="cell-date">
+                  <span>$date.year-$date.month-$date.day</span>
+                </div>
+              </div>
+            </div>
+          </li>
+          $end
+        </ul>
+      </div>
+    </div>
+    $end
+
+    $if(param.model.format == 14)
+    <ul class="list">
+      $foreach(item in param.model.data)
+      $set(date = getObjectDate(item.createDate))
+      <li class="item ui-column-$param.model.columnFormat">
+        <div class="cell">
+          <div class="cell-date">
+            <i>$date.year</i>
+            <em>$date.month-$date.day</em>
+          </div>
+          <div class="cell-exp">
+            <h3 class="cell-title">
+              <a href="$item.link" title="$item.title" target="_blank">$item.title</a>
+            </h3>
+            <div class="cell-desc">
+              <p>$item.caption</p>
+            </div>
+          </div>
+        </div>
+      </li>
+      $end
+    </ul>
+    $end
+
+    $if(param.model.format == 15)
+    <ul class="list">
+      $foreach(item in param.model.data)
+      $set(date = getObjectDate(item.createDate))
+      <li class="item ui-column-$param.model.columnFormat">
+        <div class="cell">
+          <div class="cell-date">
+            <i>$date.month-$date.day</i>
+            <em>$date.year</em>
+          </div>
+          <div class="cell-exp">
+            <h3 class="cell-title">
+              <a href="$item.link" title="$item.title" target="_blank">$item.title</a>
+            </h3>
+            <div class="cell-desc">
+              <p>$item.caption</p>
+            </div>
+          </div>
+        </div>
+      </li>
+      $end
+    </ul>
+    $end
+
+    $if(param.model.format == 16)
+    <ul class="list">
+      $foreach(item in param.model.data)
+      $set(date = getObjectDate(item.createDate))
+      <li class="item ui-column-$param.model.columnFormat">
+        <div class="cell">
+          <h3 class="cell-title">
+            <a href="$item.link" title="$item.title" target="_blank">$item.title</a>
+          </h3>
+          <div class="cell-img">
+            <div class="ui-scale-$param.model.scale">
+              <a href="$item.link" title="$item.title" target="_blank">
+                <img src="$item.pic?x-bce-process=image/resize,w_600,h_600/quality,q_80" title="$item.title" alt="$item.title" />
+              </a>
+            </div>
+          </div>
+          <div class="cell-exp">
+            <div class="cell-desc">
+              <p>
+                <a href="$item.link" title="$item.title" target="_blank">$item.caption</a>
+              </p>
+            </div>
+            <div class="cell-date">
+              <span>$date.year-$date.month-$date.day</span>
+            </div>
+          </div>
+        </div>
+      </li>
+      $end
+    </ul>
+    $end
+
+	  $if(param.model.format == 17)
+    <div class="main">
+      <div class="prev">
+        <b></b>
+      </div>
+      <div class="next">
+        <b></b>
+      </div>
+      <div class="list">
+        <ul>
+          $foreach(item in param.model.data)
+          $set(date = getObjectDate(item.createDate))
+          <li>
+            <div class="cell">
+              <div class="cell-img ui-scale-$param.model.scale">
+                <a href="$item.link" title="$item.title" target="_blank">
+                  <img src="$item.pic?x-bce-process=image/resize,w_1200,h_1200/quality,q_80" alt="$item.title" title="$item.title" />
+                </a>
+              </div>
+              <div class="cell-exp">
+                <div class="cell-title">
+                  <a href="$item.link" title="$item.title" target="_blank">$item.title</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          $end
+        </ul>
+      </div>
+      <div class="dots">
+        <ul></ul>
+      </div>
+    </div>
+    $end
+
+	  $if(param.model.format == 18)
+    <div class="main">
+      <div class="swiper-container">
+        <ul class="swiper-wrapper">
+          $foreach(item in param.model.data)
+          $set(date = getObjectDate(item.createDate))
+          <li class="swiper-slide">
+            <div class="cell">
+              <div class="cell-img ui-scale-$param.model.scale">
+                <a href="$item.link" title="$item.title" target="_blank">
+                  <img src="$item.pic?x-bce-process=image/resize,w_1200,h_1200/quality,q_80" alt="$item.title" title="$item.title" />
+                </a>
+              </div>
+              <div class="cell-exp">
+                <div class="cell-title">
+                  <a href="$item.link" title="$item.title" target="_blank">$item.title</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          $end
+        </ul>
+      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-pagination" style="bottom: 10px;"></div>
+    </div>
+    $end
+
+  </div>
+</div>

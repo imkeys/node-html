@@ -1,0 +1,77 @@
+<div class="ui-search-panel" id="ui-$param.model._id" data-approach='$param.model.approach.jsonText' data-stress='$param.model.stress.jsonText'>
+	<div class="ui-control-layout center-$param.model.format">
+      $if(param.model.format == 0)
+      <div class="search">
+        $if(param.model.dataType == 0)
+      	<div class="type">
+        	<span>商品</span>
+          	<div class="icon">
+          		<i class="cms-icon icon-xiala"></i>
+          	</div>
+          	<div class="drop">
+          		<ul>
+              		<li data-value="2" class="act">商品</li>
+                  	<li data-value="1">文章</li>
+              	</ul>
+          	</div>
+        </div>
+        $end
+        <div class="input">
+        	<input type="text" name="key" value="" placeholder="$param.model.placeholder" maxlength="10" />
+          	$if(param.model.dataType == 0)
+          	<input type="hidden" name="type" value="2" />
+          	$else
+          	<input type="hidden" name="type" value="$param.model.dataType" />
+          	$end
+        </div>
+        <div class="submit">
+        	<button type="submit" name="submit" value="">
+          		<i class="cms-icon icon-sousuo"></i>
+          	</button>
+        </div>
+      </div>
+      $end
+      
+      $if(param.model.format == 1)
+      <div class="search">
+        <div class="submit">
+        	<button type="submit" name="submit" value="">
+          		<i class="cms-icon icon-sousuo"></i>
+          	</button>
+        </div>
+        <div class="input">
+        	<input type="text" name="key" value="" placeholder="$param.model.placeholder" maxlength="10" />
+          	$if(param.model.dataType == 0)
+          	<input type="hidden" name="type" value="2" />
+          	$else
+          	<input type="hidden" name="type" value="$param.model.dataType" />
+          	$end
+        </div>
+        $if(param.model.dataType == 0)
+      	<div class="type">
+        	<span>商品</span>
+          	<div class="icon">
+          		<i class="cms-icon icon-xiala"></i>
+          	</div>
+          	<div class="drop">
+          		<ul>
+              		<li data-value="2" class="act">商品</li>
+                  	<li data-value="1">文章</li>
+              	</ul>
+          	</div>
+        </div>
+        $end
+      </div>
+      $end
+      
+      <div class="panel">
+		<ul class="key">
+			$foreach(node in param.model.keywords)
+				<li>
+                	<a href="javascript:;" title="$node">$node</a>
+          		</li>
+			$end
+		</ul>
+		</div>
+      </div>
+</div>

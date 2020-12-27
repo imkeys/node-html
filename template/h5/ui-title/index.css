@@ -1,0 +1,59 @@
+#ui-$param.model._id $param._empty .center-0 .title {
+    height: ${param.model.height}rem;
+    line-height: ${param.model.height}rem;
+    color: $param.model.color; 
+    font-size: ${param.model.size}rem;
+    text-align: $param.model.align;
+    $if(param.model.isBold)
+      font-weight:bold;
+    $else
+      font-weight:normal;
+    $end
+    $if(param.model.backgroundImage) 
+        background-image: url($param.model.backgroundImage);
+        background-repeat: no-repeat ;
+        background-position: center center;
+        background-size: cover;
+    $end
+	background-color: $param.model.backgroundColor;
+}
+
+#ui-$param.model._id $param._empty .center-1 {
+	$if(param.model.backgroundImage) 
+        background-image: url($param.model.backgroundImage);
+        background-repeat：no-repeat ;
+        background-position: center center;
+        background-size: cover;
+    $end
+	$if(param.model.backgroundColor)
+		background-color: $param.model.backgroundColor;
+	$end
+	color: $param.model.color;
+}
+
+#ui-$param.model._id $param._empty .center-1 .tit i {
+	$if(param.model.color)
+		background-color: $param.model.color;
+	$end
+}
+
+#ui-$param.model._id $param._empty .center-1 .more {
+    height: ${param.model.height}rem;
+    line-height: ${param.model.height}rem;
+    font-size: ${param.model.size}rem;
+    color: #999999;
+	height: auto;
+  	font-size: 0.26rem;
+  	line-height: inherit;
+}
+
+#ui-$param.model._id $param._empty .center-3,
+#ui-$param.model._id $param._empty .center-4,
+#ui-$param.model._id $param._empty .center-5,
+#ui-$param.model._id $param._empty .center-6,
+#ui-$param.model._id $param._empty .center-7 {
+  $if(param.model.backgroundImage)
+    background-image: url($param.model.backgroundImage);
+  $end
+}
+

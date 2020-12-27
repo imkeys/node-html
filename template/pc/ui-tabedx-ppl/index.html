@@ -1,0 +1,11 @@
+$set(model = param.model)
+<main class="ui-tabedx-ppl ui-item" id="ui-$param.model._id">
+    <div class="ui-tabedx-ppl__wrap">
+      $foreach(item in model.permutation)
+      <div class="button">$item.caption</div>
+      <section>
+        $item.child
+      </section>
+      $end
+    </div>
+</main>

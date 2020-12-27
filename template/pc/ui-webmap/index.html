@@ -1,0 +1,82 @@
+<div class="ui-wrapper" id="ui-wrapper">
+  <div class="ui-control-layout ui-control-layout-$param.model.flex">
+    <div class="ui-path" id="ui-path">
+      <h2>在线留言</h2>
+      <dl class="path">
+        <dt>您的位置：</dt>
+        $foreach(p in param.model._navigation)
+          <dd><a href="$p.link">$p.title</a></dd>
+        $end
+        <dd><span>网站地图</span></dd>
+      </dl>
+    </div>
+    $if(param.model._category != null)
+    <div class="ui-menuer" id="ui-menuer">
+      <h2>栏目分类</h2>
+      <ul class="list">
+        $if(param.model._category != null)
+        $foreach(item in param.model._category)
+        $if(item.isCurrent)
+        <li class="item active">
+          <span>$item.title</span>
+        </li>
+        $else
+        <li class="item">
+          <a href="$item.link" title="$item.title">$item.title</a>
+        </li>
+        $end
+        $end
+        $else
+        <li class="item active">
+          <span>$param.model._curGroupTitle</span>
+        </li>
+        $end
+      </ul>
+      <dl class="foot">
+        <dt>服务热线</dt>
+        <dd>$param._contactPhone</dd>
+      </dl>
+    </div>
+    $end
+    <div class="ui-container">
+      <div class="ui-content">
+        <div class="ui-webmap" id="ui-$param.model._id">
+          <div class="title">
+          	<h2>网站地图</h2>
+          </div>
+          <div class="list">
+            $foreach(item in param.model.data)
+            <div class="rows">
+              <div class="head">
+              	<h3>
+                	<a href="$item.url">$item.title</a>
+                </h3>
+              </div>
+              $if(item.nodes)
+              <div class="sub">
+                $foreach(item2 in item.nodes)
+                <div class="rows2">
+                  <h3>
+                      <a href="$item2.url">$item2.title</a>
+                  </h3>
+                  $if(item2.nodes)
+                  <dl>
+                    $foreach(item3 in item2.nodes)
+                    <dd>
+                      <a href="$item3.url">$item3.title</a>
+                    </dd>
+                    $end
+                  </dl>
+                  $end
+                </div>
+                $end
+              </div>
+              $end
+            </div>
+            $end
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+#ui-$param.model._id {
+  background-color: $param.model.backgroundColor;
+  $if(param.model.backgroundImage)
+    background-image: url($param.model.backgroundImage);background-size:contain;background-position:center center;background-repeat:no-repeat;
+  $end
+}
+#ui-$param.model._id $param._empty .center-1 .buy {
+  background-color: $param._defaultColor;
+}

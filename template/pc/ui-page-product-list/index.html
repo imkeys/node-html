@@ -1,0 +1,104 @@
+<div class="ui-wrapper" id="ui-wrapper">
+  <div class="ui-control-layout ui-control-layout-$param.model.flex">
+    <div class="ui-path" id="ui-path">
+      <h2>$param.model.curGroupTitle</h2>
+      <dl class="path">
+        <dt>您的位置：</dt>
+        $foreach(p in param.model.navigation)
+        <dd><a href="$p.link">$p.title</a></dd>
+        $end
+        <dd><span>$param.model.curGroupTitle</span></dd>
+      </dl>
+    </div>
+    <div class="ui-menuer-v2" id="ui-menuer">
+      <h2>栏目分类</h2>
+      <ul class="list">
+        $if(param.model.category != null && param.model.category.length > 0)
+          $foreach(item in param.model.category)
+            <li class="item $if(item.isCurrent) active $end">
+              <a href="$item.link" class="link" title="$item.title">$item.title</a>
+              <div class="drop">
+                <div class="trigger">
+                  <i></i>
+                </div>
+                <dl class="list2">
+                  $foreach(item2 in item.child)
+                  <dd class="item2 $if(item2.isCurrent) active $end">
+                    <a href="$item2.link" class="link2" title="$item2.title">$item2.title</a>
+                  </dd>
+                  $end
+                </dl>
+              </div>
+            </li>
+          $end
+        $else
+        <li class="item active">
+          <span>$param.model.curGroupTitle</span>
+        </li>
+        $end
+      </ul>
+      <dl class="foot">
+        <dt>咨询热线</dt>
+        <dd>$param.model.contactPhone</dd>
+      </dl>
+    </div>
+    <div class="ui-container">
+      <div class="">
+        <div class="ui-product-list" id="ui-$param.model._id">
+          <div class="center-$param.model.format">
+            $if(param.model.total ==0)
+            <div class="nodata">
+              <img src="https://saas-image.jingwxcx.com/view/01/no-data.png" />
+            </div>
+            $end
+            <ul class="list">
+              $foreach(item in param.model.productData)
+              <li class="item ui-column-$param.model.columnFormat">
+                <div class="cell">
+                  <div class="mack">
+                    <div class="img ui-scale-$param.model.scale">
+                      <a href="$item.link" target="_blank" title="$item.title">
+                        $if(item.pic)
+                            <img src="$item.pic?x-bce-process=image/resize,w_600,h_600/quality,q_50" title="$item.title" alt="$item.title" />
+                        $else
+                            <img src="https://saas-image.jingwxcx.com/upload_files/2020/10/16/b02d2ed168c2043c079bb2bcc8d26943.png" title="$item.title" alt="$item.title" />
+                        $end
+                      </a>
+                    </div>
+                    $if(item.qrCode)
+                    <div class="rcode">
+                      <a href="$item.link" title="$item.title" target="_blank">
+                        <img src="$item.qrCode" title="$item.title" alt="$item.title" />
+                        <span>扫码预定</span>
+                      </a>
+                    </div>
+                    $end
+                  </div>
+                  <div class="exp">
+                    <h3>
+                      <a href="$item.link" title="$item.title" target="_blank">$item.title</a>
+                    </h3>
+                  </div>
+                </div>
+              </li>
+              $end
+            </ul>
+          </div>
+        </div>
+        <div class="ui-pager" id="ui-pager">
+          $foreach(item in param.model.page)
+            $if(item.isFix)
+              <span>...</span>
+            $else
+              $if(item.isCurrent)
+                <span class="active">$item.val</span>
+              $else
+                <a href="$item.link">$item.val</a>
+              $end
+            $end
+          $end
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

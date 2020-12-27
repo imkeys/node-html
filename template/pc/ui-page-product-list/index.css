@@ -1,0 +1,23 @@
+#ui-menuer h2 {
+ 	background-color: $param._defaultColor;
+}
+#ui-menuer .item.active .link,
+#ui-menuer .item2.active .link2 {
+	background: $param._defaultColor;
+	color: #ffffff;
+}
+#ui-menuer .foot dd {
+	color: $param._defaultColor;
+}
+
+#ui-pager span.active {
+  background: $param._defaultColor;
+  border-color: $param._defaultColor;
+}
+
+#ui-$param.model._id $param._empty .center-0 .item:hover .exp h3 a {
+	color:$param._defaultColor;
+}
+#ui-$param.model._id $param._empty .center-1 .item:hover .exp h3 a {
+	color:$param._defaultColor;
+}

@@ -1,0 +1,122 @@
+.ui-control-layout {
+	width: auto;
+}
+.catelist .anav.hover {
+	background-color: $param.defaultColor;
+  	border-color: $param.defaultColor;
+  	color: $param.header.fontColor;
+}
+
+#ui-header .inner {
+	height: ${param.header.h}px;
+	$if(param.header.bgd.backgroundImage)
+		background: url(${param.header.bgd.backgroundImage}) center center no-repeat;
+	$else
+		background: ${param.header.bgd.backgroundColor};
+	$end
+}
+#ui-header .title {
+	color: ${param.header.fontColor};
+}
+#ui-header .shownav i,
+#ui-header .showsearch i,
+#ui-header .prev i {
+	color: ${param.header.icoColor};
+}
+
+#ui-nav .center-1 .link.current,
+#ui-nav .center-1 .link2.current,
+#ui-nav .center-1 .link3.current {
+	background: ${param.nav.selBgd.backgroundColor};
+	color: ${param.nav.selColor};
+}
+#ui-nav .center-2 .list {
+	$if(param.nav.bgd.backgroundImage)
+		background: url(${param.nav.bgd.backgroundImage}) center center no-repeat;
+	$else
+		background: ${param.nav.bgd.backgroundColor};
+	$end
+}
+#ui-nav .center-2 .link,
+#ui-nav .center-2 .link2,
+#ui-nav .center-2 .link3 {
+	color: ${param.nav.sColor};
+}
+#ui-nav .center-2 .link.current,
+#ui-nav .center-2 .link2.current,
+#ui-nav .center-2 .link3.current {
+	background: ${param.nav.selBgd.backgroundColor};
+	color: ${param.nav.selColor};
+}
+
+#ui-nav .center-3 .list {
+	$if(param.nav.bgd.backgroundImage)
+		background: url(${param.nav.bgd.backgroundImage}) center center no-repeat;
+	$else
+		background: ${param.nav.bgd.backgroundColor};
+	$end
+}
+#ui-nav .center-3 .link {
+	color: ${param.nav.sColor};
+}
+#ui-nav .center-3 .link.current,
+#ui-nav .center-3 .link2.current {
+	background: ${param.nav.selBgd.backgroundColor};
+	color: ${param.nav.selColor};
+	border: 0 solid $param.nav.selBorder.color;
+	$if(param.nav.selBorder.isTop)
+		border-top-width: ${param.nav.selBorder.w}px;
+	$end
+  	$if(param.nav.selBorder.isBottom)
+		border-bottom-width: ${param.nav.selBorder.w}px;
+	$end
+  	$if(param.nav.selBorder.isLeft)
+		border-left-width: ${param.nav.selBorder.w}px;
+	$end
+  	$if(param.nav.selBorder.isRight)
+		border-right-width: ${param.nav.selBorder.w}px;
+	$end
+}
+#ui-nav-sub .list3 {
+	border: 0 solid $param.nav.selBorder.color;
+	$if(param.nav.selBorder.isTop)
+		border-top-width: ${param.nav.selBorder.w}px;
+	$end
+  	$if(param.nav.selBorder.isBottom)
+		border-top-width: ${param.nav.selBorder.w}px;
+	$end
+  	$if(param.nav.selBorder.isLeft)
+		border-left-width: ${param.nav.selBorder.w}px;
+	$end
+  	$if(param.nav.selBorder.isRight)
+		border-right-width: ${param.nav.selBorder.w}px;
+	$end
+}
+
+#ui-nav .center-4 .list {
+	background: ${param.nav.bgd.backgroundColor};
+}
+#ui-nav .center-4 .link {
+	$if(param.nav.sBgd.backgroundImage)
+		background: url(${param.nav.sBgd.backgroundImage}) center center no-repeat;
+	$else
+		background: ${param.nav.sBgd.backgroundColor};
+	$end
+	color: ${param.nav.sColor};
+}
+#ui-nav .center-4 .link.current {
+	$if(param.nav.selBgd.backgroundImage)
+		background: url(${param.nav.selBgd.backgroundImage}) center center no-repeat;
+	$else
+		background: ${param.nav.selBgd.backgroundColor};
+	$end
+	color: ${param.nav.selColor};
+}
+
+#ui-tabbar .list {
+	color: $param.tabbar.color;
+	background-color: $param.tabbar.backgroundColor;
+}
+#ui-tabbar .list span {
+	color: $param.tabbar.color;
+}

@@ -1,0 +1,3 @@
+#ui-$param.model._id {background-color:$param.model.backgroundColor;background-image:url($param.model.backgroundImage);}
+#ui-$param.model._id $param._empty .list .item a {font-size:$param.model.size;background-color:$param.model.navBackgroundColor;color:$param.model.navColor;border-color:$param.model.navBackgroundColor;}
+#ui-$param.model._id $param._empty .center-0 .list .item a {border-color:$param.defaultColor;}

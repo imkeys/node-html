@@ -1,0 +1,21 @@
+#ui-$param.model._id {
+  height: ${param.model.height}rem;
+}
+#ui-$param.model._id $param._empty  .center-$param.model.format {
+  height: ${param.model.height}rem;
+}
+#ui-$param.model._id $param._empty .banner {
+height: ${param.model.height}rem;
+}
+#ui-$param.model._id $param._empty .list {
+height: ${param.model.height}rem;
+}
+#ui-$param.model._id $param._empty .list img {
+  height: ${param.model.height}rem;
+}
+#ui-$param.model._id $param._empty .center-0 .hd li.on,
+#ui-$param.model._id $param._empty .center-1 .hd li.on,
+#ui-$param.model._id $param._empty .center-2 .hd li.on {
+  background-color: $param._defaultColor;
+  border-color: $param._defaultColor;
+}

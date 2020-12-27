@@ -1,0 +1,32 @@
+#ui-$param.model._id $param._empty .cap-richtext {
+	min-height: .3rem;
+	$if(param.model.isFullScreen)
+	 padding: .2rem;
+	$end
+}
+
+#ui-$param.model._id $param._empty .cap-richtext p {
+	margin: 0;
+}
+
+#ui-$param.model._id $param._empty .cap-richtext a {
+	color: #496ee8;
+}
+
+.ui-header $param._empty #ui-$param.model._id,
+.ui-container $param._empty #ui-$param.model._id {
+	position: absolute;
+	left: ${param.model.x}px;
+    top: ${param.model.y}px;
+    z-index: ${param.model.z};
+}
+
+.ui-header $param._empty #ui-$param.model._id .cap-richtext,
+.ui-container $param._empty #ui-$param.model._id .cap-richtext {
+	width: ${param.model.width}px;
+	height: ${param.model.height}px;
+	padding: 0;
+	background: none;
+	font-size: 20px;
+	line-height: 1;
+}

@@ -1,0 +1,18 @@
+<div class="ui-product-category-navigation" id="ui-$param.model._id">
+  <div class="ui-control-layout center-$param.model.format">
+    <nav class="menu clearfix">
+      $foreach(item in param.model.data)
+      <a href="$item.url">$item.title</a>
+      $end
+    </nav>
+    $if(param.model.format == 3)
+    <div class="list">
+      <nav class="menu clearfix">
+        $foreach(item in param.model.data)
+        <a href="$item.url">$item.title</a>
+        $end
+      </nav>
+    </div>
+    $end
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="ui-page-about">
+  <div class="center-0">
+    $if(param.model.category == null)
+    $else
+      <div class="catelist clearfix">
+      $foreach(item in param.model.category)
+      <a class="anav" href="$item.link" title="$item.title">$item.title</a>
+      $end
+      </div>
+    $end
+
+    <div class="content singlepage">
+      <div class="txtcon">
+        $if(param.model.content!=null)
+           $param.model.content
+        $else 
+        <div class="nodata">
+          <img src="https://saas-image.jingwxcx.com/view/01/no-data.png" />
+        </div>
+        $end
+      </div>
+    </div>
+  </div>
+</div>

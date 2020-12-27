@@ -1,0 +1,19 @@
+<div class="ui-button" id="ui-$param.model._id" data-approach='$param.model.approach.jsonText' data-stress='$param.model.stress.jsonText'>
+  	$if(param.model.ver)
+  		<div class="ui-control-ver center-$param.model.format">
+            $if(param.model.href.url)
+                <a href="$param.model.href.url" target="$param.model.href.target">$param.model.text</a>
+            $else
+                <a href="javascript:;">$param.model.text</a>
+            $end
+        </div>
+  	$else
+        <div class="ui-control-layout center-$param.model.format">
+            $if(param.model.href.url)
+                <a href="$param.model.href.url" target="$param.model.href.target">$param.model.text</a>
+            $else
+                <a href="javascript:;">$param.model.text</a>
+            $end
+        </div>
+  	$end
+</div>

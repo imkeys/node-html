@@ -1,0 +1,14 @@
+#ui-$param.model._id {
+	position: relative;  	
+}
+
+#ui-$param.model._id .ui-container-layout {
+	overflow: hidden;
+	background-color: $param.model.backgroundColor;
+    $if(param.model.backgroundImage)
+      background-image: url($param.model.backgroundImage);
+      /*background-size: cover;*/
+      background-position: center center;
+      background-repeat: no-repeat;
+    $end
+}

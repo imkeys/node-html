@@ -1,0 +1,63 @@
+.ui-tabedx-tpl .ui-tabedx-tpl__carousel .el-carousel .el-carousel__button {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #444;
+}
+.ui-tabedx-tpl .ui-tabedx-tpl__carousel .el-carousel .el-carousel__indicators {
+  bottom: 25px;
+}
+.ui-tabedx-tpl .ui-tabedx-tpl__carousel .el-carousel .article-wrap {
+  position: relative;
+  height: 100%;
+  display: block;
+}
+.ui-tabedx-tpl .ui-tabedx-tpl__carousel .el-carousel .article-wrap .article-img {
+  width: 100%;
+  height: 100%;
+}
+.ui-tabedx-tpl .ui-tabedx-tpl__carousel .el-carousel .article-wrap .caption {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 35px;
+  line-height: 35px;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background: #082f5a;
+  overflow: hidden;
+}
+.ui-tabedx-tpl .ui-tabedx-tpl__wrap .wrap-btns {
+  width: 100%;
+  padding-bottom: 12px;
+}
+.ui-tabedx-tpl .ui-tabedx-tpl__wrap .wrap-btns .ui-tabedx-tpl__btn {
+  margin-bottom: 5px;
+  position: relative;
+}
+.ui-tabedx-tpl .ui-tabedx-tpl__wrap .wrap-btns .ui-tabedx-tpl__btn + .ui-tabedx-tpl .ui-tabedx-tpl__wrap .wrap-btns .ui-tabedx-tpl__btn {
+  margin-left: 0;
+}
+.ui-tabedx-tpl .ui-tabedx-tpl__wrap .wrap-btns .ui-tabedx-tpl__btn .button-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-top: 6px solid transparent;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-3px);
+}
+.ui-tabedx-tpl .ui-tabedx-tpl__wrap .wrap-content {
+  position: relative;
+  width: 100%;
+}
+.ui-tabedx-tpl .ui-tabedx-tpl__wrap .wrap-content .ui-sub {
+  width: 100% !important;
+}
+.ui-tabedx-tpl .ui-tabedx-tpl__wrap  section {
+  overflow: hidden;
+}
