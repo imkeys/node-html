@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>服务器开小差了</title>
+	<style>
+	html,body,p{
+		margin: 0;
+		padding: 0;
+	}
+	a{
+		color: #fff;
+		text-decoration: none;
+		display: inline-block;
+		background: #6cb2f8;
+		padding: 0 30px;
+		border-radius: 5px;
+		line-height: 40px;
+	}
+	.content{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 500px;
+		font-size: 16px;
+		text-align: center;
+		margin-left: -250px;
+		margin-top: -160px;
+		line-height: 40px;
+	}
+	.img{
+		width: 100%;
+	}
+	.tip{
+		padding: 10px 0;
+	}
+	@media screen and (max-width: 900px){
+		.content{
+			width: 80%;
+			margin-left: -40%;
+			font-size: 16px;
+			line-height: 20px;
+		}
+	}
+	</style>
+</head>
+
+<body>
+	<div class="content">
+		<img src="/static/image/500.png" class="img">
+		<p class="tip">亲，服务器开小差了，请联系我们的程序员哥哥！</p>
+		<a href="/" class="index">返回首页</a>
+	</div>
+</body>
+</html>
