@@ -1,9 +1,0 @@
-#ui-$param.model._id {
-  background-color: $param.model.backgroundColor;
-  $if(param.model.backgroundImage)
-    background-image: url($param.model.backgroundImage);background-size:contain;background-position:center center;background-repeat:no-repeat;
-  $end
-}
-
-#ui-$param.model._id $param._empty  .cell{border-radius:$param.model.radius px;}
-#ui-$param.model._id $param._empty  .cell .img img{border-radius:$param.model.radius px;}

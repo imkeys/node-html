@@ -1,8 +1,0 @@
-#ui-$param.model._id $param._empty .ui-mulcol-cell {
-	position: relative;
-	margin: ${param.model.padding}px;
-}
-
-#ui-$param.model._id $param._empty .ui-mulcol-body {
-	overflow: hidden;
-}

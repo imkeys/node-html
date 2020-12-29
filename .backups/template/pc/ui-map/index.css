@@ -1,8 +1,0 @@
-$set(model = param.model)
-#ui-${model._id}.ui-map {
-  position: absolute;
-  width: ${model.width}px;
-  height: ${model.height}px;
-  left: ${model.x}px;
-  top: ${model.y}px;
-}

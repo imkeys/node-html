@@ -1,9 +1,0 @@
-#ui-$param.model._id $param._empty .list img {
-  height: ${param.model.height}px;
-}
-#ui-$param.model._id $param._empty .center-0 .dots li.active,
-#ui-$param.model._id $param._empty .center-1 .dots li.active,
-#ui-$param.model._id $param._empty .center-2 .dots li.active {
-  background-color: $param._defaultColor;
-  border-color: $param._defaultColor;
-}

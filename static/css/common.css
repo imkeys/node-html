@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font: 16px/2 'Kalinga', 'Microsoft Yahei', Arial;
+  -webkit-font-smoothing: antialiased;
+  color: #666;
+  background: #ffffff;
+}
+#path {
+  position: sticky;
+  top: 0;
+  padding: 0 1em;
+  background: #f5f5f5;
+}
+#path h2 {
+  line-height: 3;
+  font-size: 16px;
+}

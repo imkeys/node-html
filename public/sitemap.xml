@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<urlset>
+  <% result.forEach(function (item) {%>
+    <url>
+      <loc><%=item.url %></loc>
+      <lastmod><%=item.date %></lastmod>
+    </url>
+  <%})%>
+</urlset>
